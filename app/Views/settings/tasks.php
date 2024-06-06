@@ -1,15 +1,18 @@
-<div id="page-content" class="page-wrapper clearfix">
+<div class="bg-silver " >
+<br>
+<span class="font-20" style="border:2px !important;" id="menuButton"><i class="border border-dark  setting-arrow" data-feather='chevron-right' class='icon-16'></i> </span><strong class="font-18" >Settings</strong>
+</div>
+<div id="page-content" class="page-wrapper-reconstructed clearfix">
     <div class="row">
-        <div class="col-sm-3 col-lg-2">
+        <div class="col-sm-3 col-lg-2" id="menuContainer">
             <?php
             $tab_view['active_tab'] = "tasks";
             echo view("settings/tabs", $tab_view);
             ?>
         </div>
 
-        <div class="col-sm-9 col-lg-10">
+        <div class="col-sm-9 col-lg-10" id="mainContent">
             <div class="card">
-
                 <ul data-bs-toggle="ajax-tab" class="nav nav-tabs bg-white title" role="tablist">
                     <li><a role="presentation" data-bs-toggle="tab" href="javascript:;" data-bs-target="#task-settings-tab"><?php echo app_lang('task_settings'); ?></a></li>
                     <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("task_status"); ?>" data-bs-target="#task-status-tab"> <?php echo app_lang('task_status'); ?></a></li>
@@ -262,6 +265,26 @@
             } else if (activeField === "#task-settings-tab") { //don't show any button for task settings tab
                 addButton.addClass("hide");
             }
+        });
+    });
+           // 5 june harshal
+           document.addEventListener('DOMContentLoaded', function() {
+        var menuButton = document.getElementById('menuButton');
+        var menuContainer = document.getElementById('menuContainer');
+        var mainContent = document.getElementById('mainContent');
+
+        menuButton.addEventListener('click', function() {
+            if (menuContainer.style.display === 'none' || menuContainer.style.display === '') {
+                menuContainer.style.display = 'block';
+                mainContent.classList.add('reduced-width');
+            } else {
+                menuContainer.style.display = 'none';
+                mainContent.classList.remove('reduced-width');
+            }
+            const iconHTML = menuButton.innerHTML;
+            const newIcon = iconHTML.includes('chevron-right') ? 'chevron-left' : 'chevron-right';
+            menuButton.innerHTML = `<i data-feather="${newIcon}" class="border border-dark setting-arrow mr5"></i>`;
+            feather.replace();
         });
     });
 </script>

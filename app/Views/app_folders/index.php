@@ -22,28 +22,37 @@ if ($view_type) {
                 </ul>
             </div>
         <?php } ?>
-        <div class="box-content" id="file-manager-items-box">
-            <div class="card grid-button" id="file-manager-container-card">
-                <div class="page-title row  no-border" id="file-manger-title-bar">
-                    <?php echo view('app_folders/title_bar'); ?>
-                </div>
-                <div class="card-body box file-manager-container" id="file-manager-container">
-                    <?php echo view('app_folders/window'); ?>
+         <div class="box-content" id="file-manager-items-box">
+            <div class="row">
+                <div class="card grid-button" id="file-manager-container-card" style="margin-bottom: 0px;">
+                    <div class="page-title row  no-border" id="file-manger-title-bar">
+                        <?php echo view('app_folders/title_bar'); ?>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="box-content w300" id="file-details-box">
-            <div class="sticky-details-section">
-                <div class="card">
-                    <div class="page-title">
-                        <h1> <?php echo app_lang('details'); ?></h1>
-                        <div class="title-button-group">
-                            <button id="close-details-button" type="button" class="btn-close p10 mt15"></button>
+            <div class="row">
+                <div class="col-12 col-md-12 align-items-center">
+                    <div class="box-content" id="file-manager-items-box">
+                        <div class="card grid-button" id="file-manager-container-card">                            
+                            <div class="card-body box file-manager-container" id="file-manager-container">
+                                <?php echo view('app_folders/window'); ?>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body box" id="file-manager-right-panel">
-                        <?php echo view('app_folders/folder_info'); ?>
+                    <div class="box-content w300" id="file-details-box">
+                        <div class="sticky-details-section">
+                            <div class="card">
+                                <div class="page-title bg-white">
+                                    <h4> <?php echo app_lang('details'); ?></h4>
+                                    <div class="title-button-group">
+                                        <button id="close-details-button" type="button" class="btn-close p10 mt15"></button>
+                                    </div>
+                                </div>
+                                <div class="card-body box" id="file-manager-right-panel">
+                                    <?php echo view('app_folders/folder_info'); ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,25 +1,26 @@
-<div id="page-content" class="page-wrapper clearfix">
+<div class="bg-silver " >
+<br>
+<span class="font-20" style="border:2px !important;" id="menuButton"><i class="border border-dark  setting-arrow" data-feather='chevron-right' class='icon-16'></i> </span><strong class="font-18" >Settings</strong>
+</div>
+<div id="page-content" class=" page-wrapper-reconstructed  clearfix">
     <div class="row">
-        <div class="col-sm-3 col-lg-2">
+        <div class="col-sm-3 col-lg-2" id="menuContainer" >
             <?php
             $tab_view['active_tab'] = "general";
             echo view("settings/tabs", $tab_view);
             ?>
         </div>
-
-        <div class="col-sm-9 col-lg-10">
+        <div class="col-sm-9 col-lg-10" id="mainContent">    <!--added mainContent on june -->
             <div class="card">
-
-                <ul data-bs-toggle="ajax-tab" class="nav nav-tabs bg-white title" role="tablist">
-                    <li><a role="presentation" data-bs-toggle="tab" href="javascript:;" data-bs-target="#general-settings-tab"> <?php echo app_lang('general_settings'); ?></a></li>
-                    <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("settings/top_menu"); ?>" data-bs-target="#top-menu-settings-tab"><?php echo app_lang('top_menu'); ?></a></li>
-                    <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("settings/footer"); ?>" data-bs-target="#footer-settings-tab"><?php echo app_lang('footer'); ?></a></li>
+                <ul data-bs-toggle="ajax-tab" class=" nav nav-tabs  bg-white  " role="tablist"> <!-- title class remvoed 4 june -->
+                    <li  class="dashboard-event-widget-restructure m15 settings-header-item " ><a class="" style="border-bottom:none !important;" role="presentation" data-bs-toggle="tab" href="javascript:;" data-bs-target="#general-settings-tab"> <?php echo app_lang('general_settings'); ?></a></li>
+                    <li class="dashboard-event-widget-restructure m15 settings-header-item" ><a role="presentation" style="border-bottom:none !important;" data-bs-toggle="tab" href="<?php echo_uri("settings/top_menu"); ?>" data-bs-target="#top-menu-settings-tab"><?php echo app_lang('top_menu'); ?></a></li>
+                    <li class="dashboard-event-widget-restructure m15 settings-header-item" ><a role="presentation" style="border-bottom:none !important;" data-bs-toggle="tab" href="<?php echo_uri("settings/footer"); ?>" data-bs-target="#footer-settings-tab"><?php echo app_lang('footer'); ?></a></li>
                 </ul>
 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade" id="general-settings-tab">
                         <?php echo form_open(get_uri("settings/save_general_settings"), array("id" => "general-settings-form", "class" => "general-form dashed-row", "role" => "form")); ?>
-
                         <div class="card-body post-dropzone">
                             <div class="form-group">
                                 <div class="row">
@@ -76,13 +77,47 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="show_logo_in_signin_page" class=" control-label"><?php echo app_lang('show_logo_in_signin_page'); ?></label>
-                                        <div class="col-md-12">
+                           
+                            <?php //if (get_setting("disable_html_input")) { ?>
+                                <!--flag the enable_rich_text_editor as disabled, when the disable_html_input is enabled-->
+                                <!-- <input type="hidden" name="enable_rich_text_editor" value="no" /> -->
+                            <?php //} else { ?>
+                                <!-- <div class="form-group">
+                                    <div class="row">
+                                        <label for="enable_rich_text_editor" class="col-md-2"><?php //echo app_lang('enable_rich_text_editor'); ?></label>
+                                        <div class="col-lg-10">
                                             <?php
+                                            // echo form_dropdown(
+                                            //         "enable_rich_text_editor", array(
+                                            //     "0" => app_lang("no"),
+                                            //     "1" => app_lang("yes")
+                                            //         ), get_setting('enable_rich_text_editor'), "class='select2 mini'"
+                                            // );
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            <?php //} ?>
+                            <!-- <div class="form-group">
+                                <div class="row">
+                                    <label for="show_theme_color_changer" class="col-md-2"><?php //echo app_lang('show_theme_color_changer'); ?></label>
+                                    <div class="col-lg-10">
+                                        <?php
+                                        // echo form_dropdown(
+                                        //         "show_theme_color_changer", array(
+                                        //     "no" => app_lang("no"),
+                                        //     "yes" => app_lang("yes")
+                                        //         ), get_setting('show_theme_color_changer'), "class='select2 mini'"
+                                        // );
+                                        ?>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="form-group">        
+                                <div class="row">
+                                <label for="show_logo_in_signin_page" class="col-md-2"><?php echo app_lang('show_logo_in_signin_page'); ?></label>
+                                    <div class="col-lg-10">
+                                <?php
                                             echo form_dropdown(
                                                     "show_logo_in_signin_page", array(
                                                 "no" => app_lang("no"),
@@ -90,14 +125,14 @@
                                                     ), get_setting('show_logo_in_signin_page'), "class='select2 mini'"
                                             );
                                             ?>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="show_background_image_in_signin_page" class=" control-label"><?php echo app_lang('show_background_image_in_signin_page'); ?></label>
-                                        <div class="col-md-12">
-                                            <?php
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label for="show_background_image_in_signin_page" class="col-md-2"><?php echo app_lang('show_background_image_in_signin_page'); ?></label>
+                                        <div class="col-lg-10">
+                                        <?php
                                             echo form_dropdown(
                                                     "show_background_image_in_signin_page", array(
                                                 "no" => app_lang("no"),
@@ -106,12 +141,12 @@
                                             );
                                             ?>
                                         </div>
-                                    </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class=" control-label"><?php echo app_lang('signin_page_background'); ?></label>
-                                        <div class=" col-md-12">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-2"><?php echo app_lang('signin_page_background'); ?></label>
+                                        <div class="col-lg-10">
                                             <div class="float-start">
                                                 <img id="signin-background-preview" style="max-width: 100px; max-height: 80px;" src="<?php echo get_file_from_setting("signin_page_background"); ?>" alt="..." />
                                             </div>
@@ -120,70 +155,73 @@
                                             </div>
                                             <div class="float-start upload-file-button btn btn-default btn-sm">
                                                 <span>...</span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="app_title" class=" control-label"><?php echo app_lang('app_title'); ?></label>
-                                        <div class=" col-md-12">
+                            </div>
+                            <div class="form-group">
+                                    <div class="row">
+                                        <label for="app_title" class="col-md-2"><?php echo app_lang('app_title'); ?></label>
+                                        <div class=" col-lg-10">
                                             <?php
                                             echo form_input(array(
                                                 "id" => "app_title",
                                                 "name" => "app_title",
                                                 "value" => get_setting('app_title'),
-                                                "class" => "form-control",
+                                                "class" => "form-control settings-input-color-restructure",
                                                 "placeholder" => app_lang('app_title'),
                                                 "data-rule-required" => true,
                                                 "data-msg-required" => app_lang("field_required"),
+                                                "style"=>"color:black",
                                             ));
                                             ?>
                                         </div>
                                     </div>
                                 </div> 
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="accepted_file_formats" class=" control-label"><?php echo app_lang('accepted_file_format'); ?></label>
-                                        <div class=" col-md-12">
+                            <div class="form-group">
+                                    <div class="row">
+                                        <label for="accepted_file_formats" class="col-md-2"><?php echo app_lang('accepted_file_format'); ?></label>
+                                        <div class=" col-lg-10">
                                             <?php
                                             echo form_input(array(
                                                 "id" => "accepted_file_formats",
                                                 "name" => "accepted_file_formats",
                                                 "value" => get_setting('accepted_file_formats'),
-                                                "class" => "form-control",
+                                                "class" => "form-control settings-input-color-restructure",
                                                 "placeholder" => app_lang('comma_separated'),
                                                 "data-rule-required" => true,
                                                 "data-msg-required" => app_lang("field_required"),
+                                                "style"=>"color:black",
                                             ));
                                             ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="landing_page" class=" control-label">
+                            <div class="form-group">
+                                    <div class="row">
+                                        <label for="landing_page" class="col-md-2">
                                             <?php echo app_lang('landing_page'); ?>
-                                            <span class="help" data-container="body" data-bs-toggle="tooltip" title="<?php echo app_lang('landing_page_help_text') ?>"><i data-feather="help-circle" class="icon-16"></i></span>
+                                            <!-- <span class="help" data-container="body" data-bs-toggle="tooltip" title="<?php //echo app_lang('landing_page_help_text') ?>"><i data-feather="help-circle" class="icon-16"></i></span> -->
 
                                         </label>
-                                        <div class=" col-md-12">
+                                        <div class=" col-lg-10">
                                             <?php
                                             echo form_input(array(
                                                 "id" => "landing_page",
                                                 "name" => "landing_page",
                                                 "value" => get_setting('landing_page'),
-                                                "class" => "form-control",
-                                                "placeholder" => app_lang('landing_page')
+                                                "class" => "form-control settings-input-color-restructure",
+                                                "placeholder" => app_lang('landing_page'),
+                                                "style"=>"color:black",
                                             ));
                                             ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="rows_per_page" class=" control-label"><?php echo app_lang('rows_per_page'); ?></label>
-                                        <div class="col-md-12">
+                            <div class="form-group">
+                                    <div class="row">
+                                        <label for="rows_per_page" class="col-md-2"><?php echo app_lang('rows_per_page'); ?></label>
+                                        <div class="col-lg-10">
                                             <?php
                                             echo form_dropdown(
                                                     "rows_per_page", array(
@@ -197,10 +235,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="scrollbar" class=" control-label"><?php echo app_lang('scrollbar'); ?></label>
-                                        <div class="col-md-12">
+                            <div class="form-group">
+                                    <div class="row">
+                                        <label for="scrollbar" class="col-md-2"><?php echo app_lang('scrollbar'); ?></label>
+                                        <div class="col-lg-10">
                                             <?php
                                             echo form_dropdown(
                                                     "scrollbar", array(
@@ -212,14 +250,13 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="enable_audio_recording" class=" control-label">
+                            <div class="form-group">
+                                    <div class="row">
+                                        <label for="enable_audio_recording" class="col-md-2">
                                             <?php echo app_lang('enable_audio_recording'); ?>
-                                            <span class="help" data-container="body" data-bs-toggle="tooltip" title="<?php echo app_lang('https_required') ?>"><i data-feather="help-circle" class="icon-16"></i></span>
+                                            <!-- <span class="help" data-container="body" data-bs-toggle="tooltip" title="<?php //echo app_lang('https_required') ?>"><i data-feather="help-circle" class="icon-16"></i></span> -->
                                         </label>
-                                        <div class="col-md-12">
+                                        <div class="col-lg-10">
                                             <?php
                                             echo form_dropdown(
                                                     "enable_audio_recording", array(
@@ -231,15 +268,14 @@
                                         </div>
                                     </div>
                                 </div>
-
                             <?php if (get_setting("disable_html_input")) { ?>
                                 <!--flag the enable_rich_text_editor as disabled, when the disable_html_input is enabled-->
                                 <input type="hidden" name="enable_rich_text_editor" value="no" />
                             <?php } else { ?>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="enable_rich_text_editor" class=" control-label"><?php echo app_lang('enable_rich_text_editor'); ?></label>
-                                        <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="enable_rich_text_editor" class="col-md-2"><?php echo app_lang('enable_rich_text_editor'); ?></label>
+                                        <div class="col-lg-10">
                                             <?php
                                             echo form_dropdown(
                                                     "enable_rich_text_editor", array(
@@ -252,43 +288,26 @@
                                     </div>
                                 </div>
                             <?php } ?>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="item_purchase_code" class=" control-label"><?php echo app_lang('item_purchase_code'); ?></label>
-                                    <div class=" col-md-12">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label for="item_purchase_code" class="col-md-2"><?php echo app_lang('item_purchase_code'); ?></label>
+                                    <div class=" col-lg-10">
                                         <?php
                                         echo form_input(array(
                                             "id" => "item_purchase_code",
                                             "name" => "item_purchase_code",
                                             "value" => get_setting('item_purchase_code') ? "******" : "",
-                                            "class" => "form-control",
+                                            "class" => "form-control settings-input-color-restructure",
                                             "placeholder" => "",
                                             "data-rule-required" => true,
                                             "data-msg-required" => app_lang("field_required"),
+                                            "style"=>"color:black",
                                         ));
                                         ?>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="show_theme_color_changer" class=" control-label"><?php echo app_lang('show_theme_color_changer'); ?></label>
-                                    <div class="col-md-12">
-                                        <?php
-                                        echo form_dropdown(
-                                                "show_theme_color_changer", array(
-                                            "no" => app_lang("no"),
-                                            "yes" => app_lang("yes")
-                                                ), get_setting('show_theme_color_changer'), "class='select2 mini'"
-                                        );
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group color-plate" id="settings-color-plate">
+                            <!-- <div class="form-group color-plate" id="settings-color-plate">
                                 <div class="row">
                                     <label for="default_theme_color" class="control-label"><?php echo app_lang('default_theme_color'); ?></label>
                                     <div class="col-md-12">
@@ -296,10 +315,10 @@
                                         <input id="default-theme-color" type="hidden" name="default_theme_color" value="<?php echo get_setting("default_theme_color"); ?>" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <?php app_hooks()->do_action('app_hook_general_settings_extension'); ?>
-                        </div>
+                    
 
                         </div>
                         <div class="card-footer">
@@ -372,6 +391,27 @@
             } else {
                 $("#default-theme-color").val("F2F2F2");
             }
+        });
+    });
+
+    // 5 june harshal
+    document.addEventListener('DOMContentLoaded', function() {
+        var menuButton = document.getElementById('menuButton');
+        var menuContainer = document.getElementById('menuContainer');
+        var mainContent = document.getElementById('mainContent');
+
+        menuButton.addEventListener('click', function() {
+            if (menuContainer.style.display === 'none' || menuContainer.style.display === '') {
+                menuContainer.style.display = 'block';
+                mainContent.classList.add('reduced-width');
+            } else {
+                menuContainer.style.display = 'none';
+                mainContent.classList.remove('reduced-width');
+            }
+            const iconHTML = menuButton.innerHTML;
+            const newIcon = iconHTML.includes('chevron-right') ? 'chevron-left' : 'chevron-right';
+            menuButton.innerHTML = `<i data-feather="${newIcon}" class="border border-dark setting-arrow mr5"></i>`;
+            feather.replace();
         });
     });
 </script>

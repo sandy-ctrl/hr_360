@@ -111,7 +111,7 @@ if ($login_user->is_admin) {
 $settings_menu = app_hooks()->apply_filters('app_filter_admin_settings_menu', $settings_menu);
 ?>
 
-<ul class="nav nav-tabs vertical settings d-block" role="tablist">
+<ul class="nav nav-tabs mr25 vertical settings d-block" role="tablist" >
     <?php
     foreach ($settings_menu as $key => $value) {
 
