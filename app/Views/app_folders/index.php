@@ -4,56 +4,31 @@ if ($view_type) {
     $page_wrapper = "ptb20";
 }
 ?>
-
+<!-- 6 june -->
 <div id="page-content" class="<?php echo $page_wrapper; ?> clearfix">
+    <ul id="client-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs title nav-tabs-restructure" role="tablist">
+        <li class="title-tab">
+            <h4 class="pl15 pt10 pr15 fw-bold"><?php echo app_lang('root_folder'); ?></h4>
+        </li>
+        <!-- <li><a href="<?php echo_uri("files_directory/explore"); ?>" data-bs-toggle="tab"><?php echo app_lang('root_folder'); ?></a></li>
+        <li><a role="presentation" data-bs-toggle="tab"><?php echo app_lang('favorites'); ?></a></li> -->
+    </ul>
     <div class="box">
         <?php if ($show_left_menu) { ?>
             <div class="box-content content-sidebar pr15" id="file-manager-sidebar">
-                <ul class="list-group mb10">
-                    <div class="input-group search-box">
-                        <?php
-                        echo form_input(array(
-                            "id" => "file-manager-search-box",
-                            "name" => "search",
-                            "value" => "",
-                            "autocomplete" => "false",
-                            "class" => "form-control help-search-box",
-                            "placeholder" => app_lang('search_folder_or_file')
-                        ));
-                        ?>
-                        <span class="spinning-btn"></span>
-                    </div>
-                </ul>
-                <ul class="list-group ">
-                    <?php
-                    if ($client_id) {
-                    ?>
-                        <a href="javascript:;" class="list-group-item explore-favourite-folder" data-folder_id=""><i data-feather="home" class="icon-16 mr10"></i><?php echo app_lang('root_folder') ?></a>
-                    <?php
-                    } else {
-                        echo anchor(get_uri($controller_slag . "/explore"), "<i data-feather='home' class='icon-16 mr10'></i>" . app_lang('root_folder'), array("class" => "list-group-item", "id" => "root-folder-link", "data-folder_id" => ""));
-                    }
-                    ?>
-                </ul>
-                <label class="p15 text-off"><?php echo app_lang("favorites"); ?></label>
-
+                <label class="mt10 p15 text-off"><?php echo app_lang("favorites"); ?></label>
                 <ul class="list-group" id="favourite-folders">
                     <?php echo view("app_folders/favourite_folders"); ?>
                 </ul>
             </div>
         <?php } ?>
-
         <div class="box-content" id="file-manager-items-box">
             <div class="card grid-button" id="file-manager-container-card">
-                <div class="page-title" id="file-manger-title-bar">
+                <div class="page-title row  no-border" id="file-manger-title-bar">
                     <?php echo view('app_folders/title_bar'); ?>
-
-
                 </div>
                 <div class="card-body box file-manager-container" id="file-manager-container">
-
                     <?php echo view('app_folders/window'); ?>
-
                 </div>
             </div>
         </div>
@@ -75,17 +50,21 @@ if ($view_type) {
         </div>
     </div>
 </div>
-
-
 <div id="folder-context-menu" class="dropdown-menu">
-
+<!-- content -->
 </div>
-
-
 <div id="modal-button-container"></div>
 <?php echo js_anchor(" ", array('id' => "app-modal-button", 'title' => "", "data-toggle" => "app-modal")); ?>
 
 <script type="text/javascript">
+    // border between two folders : harshal 5 jun
+    let items = document.querySelectorAll('.folder-item');
+    items.forEach((element, index) => {
+        if (index !== items.length - 1) {
+            element.style.borderBottom = '1px solid #DEDEDE';
+        }
+    });
+
     function setFolderWindowHeight() {
         var minHeight = $(window).height() - 290;
 
@@ -97,8 +76,6 @@ if ($view_type) {
 
     function openFolderWindow(folder_id = "") {
         $("#file-manager-container").html("");
-
-
         var fileManagerRightPanel = '<div class="no-file-selected"><div class="files-icon"><i data-feather="file-text" class="no-file-selected-icon" style=""></i><div class="no-file-selected-text font-12 text-off"><?php echo app_lang("select_a_file_to_view_details"); ?></div></div></div>';
         $("#file-manager-right-panel").html(fileManagerRightPanel);
         //$("#new_folder_button").attr("data-post-parent_id", folder_id);
@@ -137,7 +114,7 @@ if ($view_type) {
         $.ajax({
             url: "<?php echo get_uri($controller_slag . '/get_folder_items/'); ?>" + folderId + "/" + clientId,
             dataType: "json",
-            success: function(result) {
+            success: function (result) {
                 if (result.success) {
                     $("#file-manager-container").html(result.window_content);
                     $("#file-manger-title-bar").html(result.title_bar_content);
@@ -162,7 +139,7 @@ if ($view_type) {
 
         $("body").append($newElement);
         $("#" + buttonId).trigger("click");
-        setTimeout(function() {
+        setTimeout(function () {
             $("#" + buttonId).remove();
         });
 
@@ -180,7 +157,7 @@ if ($view_type) {
         $.ajax({
             url: "<?php echo get_uri($controller_slag . '/get_favourite_folders/'); ?>" + clientId,
             dataType: "json",
-            success: function(result) {
+            success: function (result) {
                 if (result.success) {
                     $("#favourite-folders").html(result.content);
                 }
@@ -299,17 +276,17 @@ if ($view_type) {
                 $("#confirmationModalContent .container-fluid").html('<?php echo app_lang("file_delete_confirmation_message"); ?>' + fileDetails);
             }
 
-            setTimeout(function() {
+            setTimeout(function () {
                 window.clickedOnFolderItem = false;
             }, 300);
 
             feather.replace();
 
-            $('.explore-folder-menu').click(function() {
+            $('.explore-folder-menu').click(function () {
                 openFolderWindow(folderId);
             });
 
-            $('.file-preview-menu').click(function() {
+            $('.file-preview-menu').click(function () {
                 if (buttonData && buttonData.preview_function && typeof window[buttonData.preview_function] === "function") {
                     window[buttonData.preview_function]($button);
                 }
@@ -317,7 +294,7 @@ if ($view_type) {
         }
 
         if (type === "window-context-menu") {
-            setTimeout(function() {
+            setTimeout(function () {
                 if (!window.clickedOnFolderItem) {
                     console.log("Window", window.clickedOnFolderItem);
 
@@ -368,7 +345,7 @@ if ($view_type) {
     }
 
     function getItemDetails(type, id) {
-        setTimeout(function() {
+        setTimeout(function () {
             if (!window.isDoubleClick) {
                 var url = "<?php echo get_uri($controller_slag . '/'); ?>";
                 if (type === "folder") {
@@ -399,9 +376,10 @@ if ($view_type) {
                     },
                     type: "POST",
                     dataType: "json",
-                    success: function(result) {
+                    success: function (result) {
                         if (result.success) {
                             $(fileDetailsContainer).html(result.content);
+
                             setFolderWindowHeight();
                         }
                         appLoader.hide();
@@ -411,8 +389,8 @@ if ($view_type) {
         }, 300);
     }
 
-    $(document).ready(function() {
-        $('body').on('contextmenu', '.show-context-menu', function(e) {
+    $(document).ready(function () {
+        $('body').on('contextmenu', '.show-context-menu', function (e) {
             e.preventDefault();
             var it = $(this);
             var type = "window-context-menu";
@@ -426,7 +404,7 @@ if ($view_type) {
             showContextMenu(it, e, type);
         });
 
-        $(document).on('click', '.file-manager-more-menu', function(e) {
+        $(document).on('click', '.file-manager-more-menu', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
@@ -445,19 +423,19 @@ if ($view_type) {
         });
 
         // Hide the context menu when clicking anywhere else in the document
-        $(document).on('click', function() {
+        $(document).on('click', function () {
             $('#folder-context-menu').css('display', 'none');
         });
 
         setFolderWindowHeight();
 
-        $('body').on('click', "#view-details-button, #close-details-button", function(e) {
+        $('body').on('click', "#view-details-button, #close-details-button", function (e) {
             $("#file-details-box").toggleClass("hide");
         });
 
         window.isDoubleClick = false;
 
-        $('body').on('click', '#file-manager-container-card .folder-item-content', function() {
+        $('body').on('click', '#file-manager-container-card .folder-item-content', function () {
             window.isDoubleClick = false;
             var $this = $(this).closest("li");
 
@@ -473,7 +451,7 @@ if ($view_type) {
         });
 
         //show details section
-        $(document).on('click', '.item-info-button', function() {
+        $(document).on('click', '.item-info-button', function () {
             window.isDoubleClick = false;
             var $this = $(this);
             var data = $this.data();
@@ -492,13 +470,13 @@ if ($view_type) {
         if ($(window).width() < 576) {
             mouseEvent = 'click';
 
-            $('body').on('click', "#close-details-button", function(e) {
+            $('body').on('click', "#close-details-button", function (e) {
                 $("#file-details-box").addClass("hide");
                 $("#file-manager-items-box").removeClass("hide");
             });
         }
 
-        $('body').on(mouseEvent, '.folder-item-content', function() {
+        $('body').on(mouseEvent, '.folder-item-content', function () {
             if ($(window).width() > 576) {
                 window.isDoubleClick = true;
             }
@@ -518,19 +496,19 @@ if ($view_type) {
         });
 
 
-        $('body').on('click', '.breadcrumb-folder-item', function() {
+        $('body').on('click', '.breadcrumb-folder-item', function () {
 
             var folder_id = $(this).data().folder_id;
             openFolderWindow(folder_id);
 
         });
 
-        $('body').on('click', '.explore-favourite-folder', function() {
+        $('body').on('click', '.explore-favourite-folder', function () {
             var favouriteFolderId = $(this).data().folder_id;
             openFolderWindow(favouriteFolderId);
         });
 
-        $(".scrollable-page").on('scroll', function() {
+        $(".scrollable-page").on('scroll', function () {
             var StickySectionTop = $('#file-manager-items-box').offset().top;
             if (85 > StickySectionTop && !$('.sticky-details-section').hasClass('stick')) {
                 $('.sticky-details-section').addClass('stick w300');
@@ -540,10 +518,10 @@ if ($view_type) {
         });
 
         //search file or folder
-        $("#file-manager-search-box").on("input", function(e) {
+        $("#file-manager-search-box").on("input", function (e) {
             var $fileManagerItems = $('.files-and-folders-list').find(".item-name");
             var searchTerm = $(this).val().toLowerCase();
-            $fileManagerItems.each(function() {
+            $fileManagerItems.each(function () {
                 var $folderItem = $(this).closest('.folder-item');
                 var itemText = $(this).html().toLowerCase();
                 if (itemText.includes(searchTerm)) {
@@ -553,10 +531,8 @@ if ($view_type) {
                 }
             });
         });
-
-        $('body').on('click', "#folder-context-menu .dropdown-item", function(e) {
+        $('body').on('click', "#folder-context-menu .dropdown-item", function (e) {
             $("#folder-context-menu").addClass("hide");
         });
-
     });
 </script>

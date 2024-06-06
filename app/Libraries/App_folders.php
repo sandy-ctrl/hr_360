@@ -115,7 +115,6 @@ trait App_folders
             return $icons;
         }
     }
-
     function explore($folder_id = "", $tab_view = false, $view_from = "", $client_id = 0)
     {
         $this->check_module_availability("module_file_manager");
