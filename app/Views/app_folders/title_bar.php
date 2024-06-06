@@ -10,10 +10,10 @@ if (isset($view_from) && ($view_from == "client_details_view" || $view_from == "
         <div class="col-12 col-md-10 d-flex flex-wrap align-items-center">
             <?php
             if ($folder_info) {
-                echo js_anchor("<i data-feather='chevron-left'></i>", array('class' => "breadcrumb-folder-item p15 pl10 text-default", "data-folder_id" => $parent_folder_info ? $parent_folder_info->folder_id : ""));
-                echo $folder_info->title;
+                echo js_anchor("<i data-feather='chevron-left'></i>", array('class' => "breadcrumb-folder-item p0 text-default", "data-folder_id" => $parent_folder_info ? $parent_folder_info->folder_id : ""));
+                echo "<h1 style='padding-left:5px;'>".$folder_info->title."</h1>";
             } else {
-                echo "<span class='mr5'><i data-feather='home' class='icon-18'></i></span>" . app_lang("root_folder");
+                echo "<span class='mr5'><i data-feather='home' class='icon-18'></i></span><h1 style='padding-left:5px;'>" . app_lang("root_folder")."</h1>";
             }
 
             if ($has_write_permission) {
