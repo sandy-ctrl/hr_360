@@ -2471,10 +2471,6 @@ img.mfp-img {
 .mt15 {
   margin-top: 15px;
 }
-/* 4 june */
-.mt19{
-  margin-top: 19px;
-}
 .mt20 {
   margin-top: 20px;
 }
@@ -4270,8 +4266,7 @@ i.online {
   color: #007bff !important;
 }
 .text-danger {
-  /* color: #f5325c !important; */  /*4 june*/
-  color: #FE5F10 !important;
+  color: #f5325c !important;
 }
 .text-warning {
   color: #ffb822 !important;
@@ -4481,8 +4476,7 @@ body.modal-open {
 /*tab*/
 .nav-tabs {
   background: #F5F5F5;
-  /* border-bottom: 2px solid #DEDEDE; */
-  border-bottom: 1px solid #DEDEDE;  /*previously 1px : 4 june*/
+  border-bottom: 2px solid #DEDEDE;
   border-radius: 5px 5px 0 0;
   padding-bottom: .5rem
 }
@@ -4495,8 +4489,7 @@ body.modal-open {
   margin-bottom: -1px;
 }
 .nav-tabs li a {
-  /* padding: 20px; */
-  padding: 16px;  /*previsouly 20px 4 june*/
+  padding: 20px;
   margin-right: 0;
   border-radius: 0;
   color: inherit;
@@ -5395,9 +5388,8 @@ svg:not(.gantt) {
 }
 .help-search-box {
   background: url(../images/search.png) no-repeat 15px 50% #fff;
-  /* padding: 15px 15px 15px 40px; 6 june */  
+  padding: 15px 15px 15px 40px;
   height: auto;
-  min-width: 200px !important;  /*4 june*/
   border: 1px solid #fff;
   border-radius: 2px;
   box-shadow: none;
@@ -7064,8 +7056,8 @@ table.dataTable tbody td.reminder-option-section {
   margin-top: 2px;
 }
 .bold-folder-icon {
-  color: #F8C82A;/* FFCE6A 4 june */
-  fill: #F8C82A;    /* FFCE6A 4 june */
+  color: #FFCE6A;
+  fill: #FFCE6A;
 }
 .bold-file-icon {
   color: #7FB6FF;
@@ -7346,7 +7338,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control a {
 }
 
 .dashboard-task-widget-restructure {
-	/* border: 1px solid #FFF4C9 !important; */ /*4 june*/
+	border: 1px solid #FFF4C9 !important;
 	background: #FEF7DA !important;
 }
 
@@ -7357,12 +7349,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control a {
 .dashboard-event-widget-restructure {
 	background: #FFE7DB !important;
 	border: 1px solid #FDE4D8
-}
-/* harshal : 4 june */
-.settings-input-color-restructure {
-	background: #FFE7DB !important;
-  font-weight: bold;
-	opacity: 0.31;
 }
 
 .dashboard-due-widget-restructure {
@@ -7700,7 +7686,7 @@ table tbody tr td a,table tbody tr td a:hover {
 .triangle-restructure{
 	position: absolute;
     top: 50%;
-    left: 100%; /* Position it to the right of the profile icon */;
+    left: 100%; /* Position it to the right of the profile icon */
     transform: translateY(-50%);
     width: 0px;
     height: 0px;
