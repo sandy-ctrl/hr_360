@@ -5498,18 +5498,21 @@ svg:not(.gantt) {
   padding: 0px;
   padding-top: 15px;
   padding-bottom: 15px;
-  background: #D9DEE2;
+  /* background: #D9DEE2; harshal  7 june */
+  background: #F7F7F7;
 }
 .kanban-col {
   list-style-type: none;
   float: left;
   margin: 0 15px;
   width: 305px;
+  
 }
 .kanban-col-title {
   padding: 15px;
   background: #fff;
   color: #4e5e6a;
+  /* color: #FE5F10;  */
   margin-bottom: 15px;
   margin-right: 3px;
   border-top-left-radius: 5px;
@@ -5536,7 +5539,8 @@ svg:not(.gantt) {
   display: table;
   color: #4e5e6a;
   width: 300px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  border-radius: 1px 1px 15px 1px; /* harshal 7 june */
 }
 .kanban-item:before, .kanban-item:after {
   display: table;
@@ -7531,7 +7535,7 @@ a{
 	bottom: 0px !important;
 }
 
-#payment-received-tabs, #invoices-tabs, #order-tabs, #contract-tabs, #estimate-tabs, #proposal-tabs, #attendance-tabs, #leave-tabs, #expenses-tabs
+#payment-received-tabs, #invoices-tabs, #order-tabs, #contract-tabs, #estimate-tabs, #proposal-tabs, #attendance-tabs, #leave-tabs, #expenses-tabs{
     font-size: 2rem;
 }
 
@@ -7654,7 +7658,7 @@ table tbody tr td a,table tbody tr td a:hover {
 	background: #E6E5E9;
 }
 
-/*dashboard-project-timelines
+/*dashboard-project-timelines*/
 .bg-project-timeline-success-restructure{
 	background: #0E0A1E;
     border: 1px solid #0E0A1E;
@@ -7686,7 +7690,7 @@ table tbody tr td a,table tbody tr td a:hover {
 .triangle-restructure{
 	position: absolute;
     top: 50%;
-    left: 100%; /* Position it to the right of the profile icon */
+    left: 100%; 
     transform: translateY(-50%);
     width: 0px;
     height: 0px;
@@ -7799,4 +7803,19 @@ table tbody tr td a,table tbody tr td a:hover {
 }
 .settings-header-item {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* harshal tasks 7 june */
+.start-date-icon{
+  color: #36AF33;
+}
+.end-date-icon{
+  color: #4EA0EB;
+}
+.start-end-title-style{
+  color: #868686 !important;
+  font-size: 11px;
+}
+#load-kanban .kanban-container .kanban-col-title span{
+  color: #FE5F10 !important;
 }

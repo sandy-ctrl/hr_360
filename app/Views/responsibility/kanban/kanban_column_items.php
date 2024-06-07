@@ -9,16 +9,17 @@ foreach ($tasks as $task) {
     $checklist_label_color = "#6690F4";
 
     if ($task->total_checklist_checked <= 0) {
-        $checklist_label_color = "#E18A00";
+        // $checklist_label_color = "#E18A00"; 
+        $checklist_label_color = "#3C3653"; //7 june by harshal
     } else if ($task->total_checklist_checked == $task->total_checklist) {
         $checklist_label_color = "#01B392";
     }
 
-    if ($task->priority_id) {
-        $task_labels .= "<div class='meta float-start mr5'><span class='sub-task-icon priority-badge' data-bs-toggle='tooltip' title='" . app_lang("priority") . ": " . $task->priority_title . "' style='background: $task->priority_color'><i data-feather='$task->priority_icon' class='icon-14'></i></span></div>";
+    if ($task->priority_id) { //backgournd color fo arrow up : #e18a00
+        $task_labels .= "<div class='meta float-start ml30 mr5'><span class='sub-task-icon priority-badge' data-bs-toggle='tooltip' title='" . app_lang("priority") . ": " . $task->priority_title . "' style='background: $task->priority_color'><i data-feather='$task->priority_icon' class='icon-14'></i></span></div>";
     }
 
-    if ($task->total_checklist) {
+    if ($task->total_checklist) {  //previous background color : test task=#d43480 
         $task_checklist_status .= "<div class='meta float-start badge rounded-pill mr5' style='background-color:$checklist_label_color'><span data-bs-toggle='tooltip' title='" . app_lang("checklist_status") . "'><i data-feather='check' class='icon-14'></i> $task->total_checklist_checked/$task->total_checklist</span></div>";
     }
 
@@ -61,7 +62,7 @@ foreach ($tasks as $task) {
 
     $start_date = "";
     if ($task->start_date) {
-        $start_date = "<div class='mt10 font-12 float-start' title='" . app_lang("start_date") . "'><i data-feather='calendar' class='icon-14 text-off mr5'></i> " . format_to_date($task->start_date, false) . "</div>";
+        $start_date = "<div class='mt10 font-12 float-start' title='" . app_lang("start_date") . "'><span class='start-end-title-style' >Start date</span> <br>" . format_to_date($task->start_date, false) ."<i data-feather='calendar' class='icon-14 text-off ml5 mr5 start-date-icon'></i> </div>"; //added ml5 7 june harshal
     }
 
     $deadline_text = "-";
@@ -76,7 +77,7 @@ foreach ($tasks as $task) {
 
     $end_date = "";
     if ($task->deadline) {
-        $end_date = "<div class='mt10 font-12 float-end' title='" . app_lang("deadline") . "'><i data-feather='calendar' class='icon-14 text-off mr5'></i> " . $deadline_text . "</div>";
+        $end_date = "<div class='mt10 font-12 float-end' title='" . app_lang("deadline") . "'><span class='start-end-title-style' >End date</span> <br>" . $deadline_text ."<i data-feather='calendar' class='icon-14 text-off ml5 mr5 end-date-icon'></i>  '</div>";  // 7 june
     }
 
     $task_id = "";
@@ -116,6 +117,7 @@ foreach ($tasks as $task) {
 
     echo modal_anchor(get_uri("responsibility/view"), "<span class='avatar'>" .
             "<img src='" . get_avatar($task->assigned_to_avatar) . "'>" .
-            "</span>" . $sub_task_icon . $task_id . $task->title . $toggle_sub_task_icon . $batch_operation_checkbox . "<div class='clearfix'>" . $start_date . $end_date . "</div>" . $project_name . $client_name . $kanban_custom_fields_data .
+            "</span>" . $sub_task_icon . $task_id ."<strong>". $task->title."</strong>" . $toggle_sub_task_icon . $batch_operation_checkbox . "<div class='clearfix'>" . $start_date . $end_date . "</div>" . $project_name . $client_name . $kanban_custom_fields_data .
             $task_labels . $task_checklist_status . $sub_task_status . "<div class='clearfix'></div>" . $parent_task, array("class" => "kanban-item d-block $disable_dragging $unread_comments_class", "data-status_id" => $task->status_id, "data-id" => $task->id, "data-project_id" => $task->project_id, "data-sort" => $task->new_sort, "data-post-id" => $task->id, "title" => app_lang('task_info') . " #$task->id", "data-modal-lg" => "1"));
+            // made task tile bold  7 june by harshal
 }
