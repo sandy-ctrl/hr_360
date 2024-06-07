@@ -13,9 +13,8 @@
             if (!$tasks) {
                 $tasks = array();
             }
-            ?>" >
-                <div class="kanban-col-title" style="border-bottom: 3px solid <?php echo $column->color ? $column->color : "#2e4053"; ?>;"> <?php echo $column->key_name ? app_lang($column->key_name) : $column->title; ?> <span class="kanban-item-count <?php echo $column->id; ?>-task-count float-end"><?php echo $tasks_count; ?> </span></div>
-
+            ?>" >      <!-- previous colors bottom borders : todo= #F9A52D ,inprogress= #1672B9, Done= #00B393  harshal  7 june -->
+                <div class="kanban-col-title fw-bold" style="border-bottom: 3px solid <?php echo $column->color ? $column->color : "#2e4053"; ?>;"> <?php echo $column->key_name ? app_lang($column->key_name) : $column->title; ?> <span class="kanban-item-count <?php echo $column->id; ?>-task-count float-end"><?php echo $tasks_count; ?> </span></div>
                 <div class="kanban-input general-form hide">
                     <?php
                     echo form_input(array(
@@ -28,7 +27,7 @@
                     ?>
                 </div>
 
-                <div  id="kanban-item-list-<?php echo $column->id; ?>" class="kanban-item-list" data-status_id="<?php echo $column->id; ?>">
+                <div  id="kanban-item-list-<?php echo $column->id; ?>" class="kanban-item-list " data-status_id="<?php echo $column->id; ?>">
                     <?php
                     echo view("responsibility/kanban/kanban_column_items", array(
                         "tasks" => $tasks,
@@ -54,8 +53,6 @@
         if (!$("#kanban-container").length) {
             return false;
         }
-
-
         var totalColumns = "<?php echo $total_columns ?>";
         var columnWidth = (335 * totalColumns) + 5;
 
