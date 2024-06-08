@@ -1,17 +1,19 @@
 <div class="card">
-    <div class="card-header title-tab">
+    <div class="card-header title-tab" style="border-bottom: 2px solid #DEDEDE;background-color: #F5F5F5;">
         <h4 class="float-start"><?php echo app_lang('tasks'); ?></h4>
         <div class="title-button-group">
             <?php
             if ($login_user->user_type == "staff" && $can_edit_tasks) {
-                echo modal_anchor(get_uri("labels/modal_form"), "<i data-feather='tag' class='icon-16'></i> " . app_lang('manage_labels'), array("class" => "btn btn-outline-light", "title" => app_lang('manage_labels'), "data-post-type" => "task"));
-                echo modal_anchor("", "<i data-feather='edit' class='icon-16'></i> " . app_lang('batch_update'), array("class" => "btn btn-info text-white hide batch-update-btn", "title" => app_lang('batch_update'), "data-post-project_id" => $project_id));
-                echo js_anchor("<i data-feather='check-square' class='icon-16'></i> " . app_lang("batch_update"), array("class" => "btn btn-outline-light batch-active-btn"));
-                echo js_anchor("<i data-feather='x-square' class='icon-16'></i> " . app_lang("cancel_selection"), array("class" => "hide btn btn-outline-light batch-cancel-btn"));
+                echo modal_anchor("", "<i data-feather='edit' class='icon-16'></i> " . app_lang('batch_update'), array("class" => "btn btn-default text-white hide batch-update-btn", "title" => app_lang('batch_update'), "data-post-project_id" => $project_id));
+                echo js_anchor("<i data-feather='check-square' class='icon-16'></i> " . app_lang("batch_update"), array("class" => "btn btn-default batch-active-btn"));
+                echo js_anchor("<i data-feather='x-square' class='icon-16'></i> " . app_lang("cancel_selection"), array("class" => "hide btn btn-default batch-cancel-btn"));
             }
             if ($can_create_tasks) {
-                echo modal_anchor(get_uri("responsibility/modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_multiple_tasks'), array("class" => "btn btn-outline-light", "title" => app_lang('add_multiple_tasks'), "data-post-project_id" => $project_id, "data-post-add_type" => "multiple"));
-                echo modal_anchor(get_uri("responsibility/modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_task'), array("class" => "btn btn-outline-light", "title" => app_lang('add_task'), "data-post-project_id" => $project_id));
+                echo modal_anchor(get_uri("responsibility/modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_multiple_tasks'), array("class" => "btn btn-default", "title" => app_lang('add_multiple_tasks'), "data-post-project_id" => $project_id, "data-post-add_type" => "multiple"));
+                echo modal_anchor(get_uri("responsibility/modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_task'), array("class" => "btn btn-default", "title" => app_lang('add_task'), "data-post-project_id" => $project_id));
+            }
+            if ($login_user->user_type == "staff" && $can_edit_tasks) {
+                echo modal_anchor(get_uri("labels/modal_form"), "<i data-feather='tag' class='icon-16'></i> ", array("class" => "btn btn-default", "title" => app_lang('manage_labels'), "data-post-type" => "task"));
             }
             ?>
         </div>

@@ -983,6 +983,7 @@ $lang["sort"] = "Sort";
 $lang["total_views"] = "Total views";
 
 $lang["help_and_support"] = "Help & Support";
+$lang["support"] = "Support";
 $lang["knowledge_base"] = "Knowledge base";
 
 $lang["payment_success_message"] = "Your payment has been completed.";
