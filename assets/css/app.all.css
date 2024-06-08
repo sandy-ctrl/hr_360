@@ -3725,8 +3725,10 @@ small {
   white-space: nowrap;
 }
 .avatar-lg {
-  width: 125px;
-  height: 125px;
+  /* width: 125px;
+  height: 125px; */  
+  width: 105px;  /*harshal 7 june */
+  height: 105px;
 }
 .avatar-md {
   width: 80px;
@@ -7818,4 +7820,14 @@ table tbody tr td a,table tbody tr td a:hover {
 }
 #load-kanban .kanban-container .kanban-col-title span{
   color: #FE5F10 !important;
+}
+/* harshal : My Profile general settings design : 7 june */
+.profile-name{
+  color: #3C3653;
+}
+.open-time-heading{
+  margin: 2px !important;
+}
+.box-shadow-left-bottom-side{
+    box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.10), 0 10px 20px -10px rgba(0, 0, 0, 0.10)!important;
 }
