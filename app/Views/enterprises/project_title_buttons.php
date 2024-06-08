@@ -1,17 +1,17 @@
 <?php
 if (can_access_reminders_module()) {
-    echo modal_anchor(get_uri("schedules/reminders"), "<i data-feather='clock' class='icon-16'></i> " . app_lang('reminders'), array("class" => "btn btn-light hidden-sm", "id" => "reminder-icon", "data-post-project_id" => $project_info->id, "data-post-reminder_view_type" => "project", "title" => app_lang('reminders') . " (" . app_lang('private') . ")"));
+    echo modal_anchor(get_uri("schedules/reminders"), "<i data-feather='clock' class='icon-16'></i> " . app_lang('reminders'), array("class" => "btn btn-default hidden-sm", "id" => "reminder-icon", "data-post-project_id" => $project_info->id, "data-post-reminder_view_type" => "project", "title" => app_lang('reminders') . " (" . app_lang('private') . ")"));
 }
 ?>
 
 <?php
 if ($can_edit_timesheet_settings || $can_edit_slack_settings || $can_create_projects) {
-    echo modal_anchor(get_uri("enterprises/settings_modal_form"), "<i data-feather='settings' class='icon-16'></i> " . app_lang('settings'), array("class" => "btn btn-light", "title" => app_lang('settings'), "data-post-project_id" => $project_info->id));
+    echo modal_anchor(get_uri("enterprises/settings_modal_form"), "<i data-feather='settings' class='icon-16'></i> " . app_lang('settings'), array("class" => "btn btn-default", "title" => app_lang('settings'), "data-post-project_id" => $project_info->id));
 }
 ?>
 <?php if ($show_actions_dropdown) { ?>
     <div class="dropdown btn-group">
-        <button class="btn btn-secondary dropdown-toggle caret" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+        <button class="btn btn-default dropdown-toggle caret" type="button" data-bs-toggle="dropdown" aria-expanded="true" style="width:100%;">
             <i data-feather="tool" class="icon-16"></i> <?php echo app_lang('actions'); ?>
         </button>
         <ul class="dropdown-menu" role="menu">

@@ -1,14 +1,29 @@
 <div class="clearfix default-bg">
 
-    <div class="row">
+    <div class="row" style="background-color: #F5F5F5;">
+        <div class="col-md-6">
+            <div class="card project-activity-section dashboard-card-restructure">
+                <div class="card-header">
+                    <h4><?php echo app_lang('activity'); ?></h4>
+                </div>
+                <?php echo view("enterprises/history/index"); ?>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <?php echo view("enterprises/project_progress_chart_info"); ?>
-                </div>
+                
                 <div class="col-md-6 col-sm-12">
                     <?php echo view("enterprises/project_task_pie_chart"); ?>
                 </div>
+                <div class="col-md-6 col-sm-12">
+                    <?php echo view("enterprises/project_progress_chart_info"); ?>
+                </div>
+
+                <?php if ($can_add_remove_project_members) { ?>
+                    <div class="col-md-12 col-sm-12">
+                        <?php echo view("enterprises/project_members/index"); ?>
+                    </div>  
+                <?php } ?>
 
                 <?php if (get_setting('module_project_timesheet')) { ?>
                     <div class="col-md-12 col-sm-12">
@@ -32,12 +47,6 @@
                     </div>
                 <?php } ?>
 
-                <?php if ($can_add_remove_project_members) { ?>
-                    <div class="col-md-12 col-sm-12">
-                        <?php echo view("enterprises/project_members/index"); ?>
-                    </div>  
-                <?php } ?>
-
                 <?php if ($can_access_clients && $project_info->project_type === "client_project") { ?>
                     <div class="col-md-12 col-sm-12">
                         <?php echo view("enterprises/client_contacts/index"); ?>
@@ -49,14 +58,6 @@
                 </div>
 
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card project-activity-section">
-                <div class="card-header">
-                    <h4><?php echo app_lang('activity'); ?></h4>
-                </div>
-                <?php echo view("enterprises/history/index"); ?>
-            </div>
-        </div>
+        </div>        
     </div>
 </div>
