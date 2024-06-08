@@ -33,7 +33,7 @@ if (!function_exists("make_project_tabs_data")) {
 }
 ?>
 
-<div class="page-content project-details-view clearfix">
+<div class="page-content project-details-view clearfix" style="background: #F5F5F5;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -65,7 +65,7 @@ if (!function_exists("make_project_tabs_data")) {
                             </div>
                         </div>
                     </div>
-                    <ul id="project-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs rounded classic mb20 scrollable-tabs border-white" role="tablist">
+                    <ul id="project-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs rounded classic mb20 scrollable-tabs" role="tablist" style="border-bottom: none;">
                         <?php
                         if ($login_user->user_type === "staff") {
                             //default tab order

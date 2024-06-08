@@ -1,5 +1,5 @@
 <div class="card">
-    <ul id="project-timesheet-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs bg-white title" role="tablist">
+    <ul id="project-timesheet-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs title" role="tablist">
         <li class="nav-item title-tab"><h4 class="pl15 pt10 pr15"><?php echo app_lang("timesheets"); ?></h4></li>
 
         <li class="nav-item"><a class="nav-link" id="timesheet-details-button" role="presentation" href="javascript:;" data-bs-target="#timesheet-details"><?php echo app_lang("details"); ?></a></li>

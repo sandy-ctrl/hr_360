@@ -1,5 +1,5 @@
-<div class="card">
-    <div class="bg-primary p30 rounded-top">
+<div class="card project-card-restructure">
+    <div class="bg-primary p30 rounded-top project-progress-chart-restructure">
         <br />
     </div>
     <div class="clearfix text-center mb-1">
@@ -8,16 +8,16 @@
         </div>
     </div>
 
-    <ul class="list-group list-group-flush">
+    <ul class="list-group list-group-flush" style="border-bottom-right-radius: 15px;">
         <li class="list-group-item border-top">
-            <?php echo app_lang("start_date"); ?>: <?php echo is_date_exists($project_info->start_date) ? format_to_date($project_info->start_date, false) : "-"; ?>
+            <?php echo "<i data-feather='calendar' class='icon-16'></i> ". app_lang("start_date"); ?>: <?php echo is_date_exists($project_info->start_date) ? format_to_date($project_info->start_date, false) : "-"; ?>
         </li>
         <li class="list-group-item border-top">
-            <?php echo app_lang("deadline"); ?>: <?php echo is_date_exists($project_info->deadline) ? format_to_date($project_info->deadline, false) : "-"; ?>
+            <?php echo "<i data-feather='calendar' class='icon-16'></i> ". app_lang("deadline"); ?>: <?php echo is_date_exists($project_info->deadline) ? format_to_date($project_info->deadline, false) : "-"; ?>
         </li>
         <?php if ($login_user->user_type === "staff" && $project_info->project_type === "client_project") { ?>
             <li class="list-group-item border-top">
-                <?php echo app_lang("client"); ?>: <?php echo anchor(get_uri("patrons/view/" . $project_info->client_id), $project_info->company_name? $project_info->company_name: ""); ?>
+                <?php echo "<i data-feather='command' class='icon-16'></i> ". app_lang("client"); ?>: <?php echo anchor(get_uri("patrons/view/" . $project_info->client_id), $project_info->company_name? $project_info->company_name: ""); ?>
             </li>
         <?php } else { ?>
             <li class="list-group-item border-top">
@@ -44,7 +44,7 @@
                 datasets: [{
                         label: 'Complete',
                         percent: project_progress,
-                        backgroundColor: ['#6690F4'],
+                        backgroundColor: ['#9FD6FF'],
                         borderWidth: 0
                     }]
             },
@@ -62,7 +62,7 @@
                                 ctx = chart.chart.ctx;
                         ctx.restore();
                         ctx.font = 1.5 + "em sans-serif";
-                        ctx.fillStyle = "#9b9b9b";
+                        ctx.fillStyle = "#9FD6FF";
                         ctx.textBaseline = "middle";
                         ctx.textAlign = textAlign;
                         var text = chart.data.datasets[0].percent + "%",

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card dashboard-card-restructure">
     <div class="card-header">
         <h6 class="float-start"><?php echo app_lang('description'); ?></h6>
     </div>

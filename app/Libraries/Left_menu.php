@@ -255,7 +255,7 @@ class Left_menu {
                     $main_url = "knowledge_base";
                 }
 
-                $sidebar_menu["help_and_support"] = array("name" => "help_and_support", "url" => $main_url, "class" => "help-circle",
+                $sidebar_menu["help_and_support"] = array("name" => "support", "url" => $main_url, "class" => "help-circle",
                     "submenu" => $help_knowledge_base_menues
                 );
             }
