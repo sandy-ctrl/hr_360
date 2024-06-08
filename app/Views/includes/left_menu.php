@@ -71,8 +71,9 @@
 
                 <li class="<?php echo $active_class . " " . $expend_class . " " . $submenu_open_class . " "; ?> main">
                     <a <?php echo $target; ?> href="<?php echo $is_custom_menu_item ? $url : get_uri($url); ?>">
-                        <i data-feather="<?php echo $class; ?>" class="icon"></i>
-                        <!-- <img src="<?= base_url("assets/images/icons/") ?>leads.png" class="icon"> -->
+                        <!-- <i data-feather="<?php echo $class; ?>" class="icon"></i> -->
+                        <!-- <img src="<?= base_url("assets/images/icons/") ?>.png" class="icon"> -->
+                        <img src="<?= base_url("assets/images/icons/".$main_menu_name) ?>.png" class="navigation_icon">
                         <span class="menu-text <?php echo $custom_class; ?>"><?php echo $main_menu_name; ?></span>
     <?php
     if ($badge) {

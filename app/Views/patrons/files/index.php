@@ -9,7 +9,7 @@ if ($page_view) {
     <div id="page-content" class="page-wrapper clearfix">
     <?php } ?>
     <div class="card clearfix">
-        <ul id="client-files-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs bg-white title" role="tablist">
+        <ul id="client-files-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs title" role="tablist">
             <li><a role="presentation" data-bs-toggle="tab" href="javascript:;" data-bs-target="#file-list-tab"><?php echo app_lang("files_list"); ?></a></li>
             <?php if (get_setting("module_file_manager") == "1") { ?>
                 <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("files_directory/explore/" . $folder_id . "/1/" . $view_from . "/" . $client_id); ?>" data-bs-target="#file-grid-tab"><?php echo app_lang('folders'); ?></a></li>
