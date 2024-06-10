@@ -4481,8 +4481,12 @@ body.modal-open {
 <<<<<<< HEAD
   border-bottom: 2px solid #DEDEDE;
 =======
+<<<<<<< HEAD
+  border-bottom: 2px solid #DEDEDE;
+=======
   border-bottom: 2px solid #DEDEDE; 
 >>>>>>> 1dc88abe457015e3a5b87bd46ea8a77b503b8874
+>>>>>>> 673ba64fb2ddbeb2646c5a61384a04e8547eec3c
   border-radius: 5px 5px 0 0;
   padding-bottom: .5rem
 }
@@ -7833,6 +7837,8 @@ table tbody tr td a,table tbody tr td a:hover {
 .box-shadow-left-bottom-side{
     box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.10), 0 10px 20px -10px rgba(0, 0, 0, 0.10)!important;
 }
+<<<<<<< HEAD
+=======
 /*sandip 7 June*/
 /*client details file section*/
 #client-files-tabs li:not(.title-tab):after {
@@ -7847,7 +7853,7 @@ table tbody tr td a,table tbody tr td a:hover {
 }
 
 .project-card-restructure{
-	border-radius: 1px 1px 15px 1px;
+	border-radius: 1px 1px 15px 1px !important;
     color: #0E0A1E;
 }
 
@@ -7855,5 +7861,6 @@ table tbody tr td a,table tbody tr td a:hover {
   width: 22px;
   height: 22px;
 }
-/*project staticstic section*/
+/* project staticstic section*/
 /*sandip 7 June*/
+>>>>>>> 673ba64fb2ddbeb2646c5a61384a04e8547eec3c
