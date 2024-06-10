@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card dashboard-card-restructure">
     <div class="card-body">
-        <canvas id="task-status-chart" width="512"></canvas>
+        <canvas id="task-status-chart" width="490"></canvas>
     </div>
 </div>
 

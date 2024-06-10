@@ -1,10 +1,10 @@
 <div class="card mb0 mt10">
-    <div class="card-header title-tab clearfix">
+    <div class="card-header title-tab clearfix" style="border-bottom: 2px solid #DEDEDE;background-color: #F5F5F5;">
         <h4 class="float-start"><?php echo app_lang('tasks') . " " . app_lang('kanban'); ?><span class="ms-4 clickable project-title-section-hide-button"><i data-feather='arrow-up' class='icon-16'></i></span></h4>
         <div class="title-button-group">
             <?php
             if ($login_user->user_type == "staff" && $can_edit_tasks) {
-                echo modal_anchor("", "<i data-feather='edit' class='icon-16'></i> " . app_lang('batch_update'), array("class" => "btn btn-info text-white hide batch-update-btn", "title" => app_lang('batch_update'), "data-post-project_id" => $project_id));
+                echo modal_anchor("", "<i data-feather='edit' class='icon-16'></i> " . app_lang('batch_update'), array("class" => "btn btn-default text-white hide batch-update-btn", "title" => app_lang('batch_update'), "data-post-project_id" => $project_id));
                 echo js_anchor("<i data-feather='check-square' class='icon-16'></i> " . app_lang("cancel_selection"), array("class" => "hide btn btn-default batch-cancel-btn"));
             }
             if ($can_create_tasks) {

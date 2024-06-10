@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-body">
+    <div class="card-body dashboard-task-widget-restructure">
         <div class="d-flex">
             <div class="flex-shrink-0 text-off align-self-center">
                 <i data-feather="clock" width="5rem" height="5rem"></i>

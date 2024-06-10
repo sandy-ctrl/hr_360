@@ -1408,7 +1408,7 @@ img.mfp-img {
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 .sidebar-menu li a span {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .sidebar-menu li a:active, .sidebar-menu li a:hover, .sidebar-menu li a:focus {
   color: #FFFFFF;
@@ -2924,7 +2924,7 @@ table.dataTable thead .sorting {
   padding: 7px 10px;
   outline: none;
   font-weight: normal;
-  background: url("../images/search.png") no-repeat 96% 45% #fff;
+  background: url("../images/search.png") no-repeat 96% 45% #F5F5F5;
   width: 200px !important;
   transition: all 0.5s;
   height: 32px;
@@ -4478,7 +4478,15 @@ body.modal-open {
 /*tab*/
 .nav-tabs {
   background: #F5F5F5;
+<<<<<<< HEAD
   border-bottom: 2px solid #DEDEDE;
+=======
+<<<<<<< HEAD
+  border-bottom: 2px solid #DEDEDE;
+=======
+  border-bottom: 2px solid #DEDEDE; 
+>>>>>>> 1dc88abe457015e3a5b87bd46ea8a77b503b8874
+>>>>>>> 673ba64fb2ddbeb2646c5a61384a04e8547eec3c
   border-radius: 5px 5px 0 0;
   padding-bottom: .5rem
 }
@@ -4530,7 +4538,7 @@ body.modal-open {
 }
 .nav-tabs li .active:focus, .nav-tabs li.active:focus {
   outline: none;
-  border-bottom: 2px solid #20446f !important;
+  border-bottom: 3px solid #20446f !important;
 }
 .nav-tabs.title li a {
   padding: 22px 15px 9px;
@@ -7529,11 +7537,11 @@ a{
 	width: fit-content !important;
 }
 
-#order-tabs li:not(.title-tab):after, #contract-tabs li:not(.title-tab):after, #estimate-tabs li:not(.title-tab):after, #proposal-tabs li:not(.title-tab):after, #client-tabs li:not(.title-tab):after, #attendance-tabs li:not(.title-tab):after, #leave-tabs li:not(.title-tab):after {
+#order-tabs li:not(.title-tab):after, #contract-tabs li:not(.title-tab):after, #estimate-tabs li:not(.title-tab):after, #proposal-tabs li:not(.title-tab):after, #client-tabs li:not(.title-tab):after, #attendance-tabs li:not(.title-tab):after, #leave-tabs li:not(.title-tab):after, #project-files-tabs li:not(.title-tab):after, #project-timesheet-tabs li:not(.title-tab):after {
 	bottom: 2px !important;
 }
 
-#invoices-tabs li:not(.title-tab):after, #payment-received-tabs li:not(.title-tab):after, #task-tabs li:not(.title-tab):after, #token-tabs li:not(.title-tab):after, #expenses-tabs li:not(.title-tab):after , #project-all-timesheet-tabs li:not(.title-tab):after, #income-vs-expenses-chart-tabs li:not(.title-tab):after, #summary-summary-tabs li:not(.title-tab):after, #payment-summary-tabs li:not(.title-tab):after, #invoices-summary-tabs li:not(.title-tab):after, #project-reports-tabs li:not(.title-tab):after, #leads-reports-tabs li:not(.title-tab):after, #tickets-reports-tabs li:not(.title-tab):after, #clients-view-tabs li:not(.title-tab):after {
+#invoices-tabs li:not(.title-tab):after, #payment-received-tabs li:not(.title-tab):after, #task-tabs li:not(.title-tab):after, #token-tabs li:not(.title-tab):after, #expenses-tabs li:not(.title-tab):after , #project-all-timesheet-tabs li:not(.title-tab):after, #income-vs-expenses-chart-tabs li:not(.title-tab):after, #summary-summary-tabs li:not(.title-tab):after, #payment-summary-tabs li:not(.title-tab):after, #invoices-summary-tabs li:not(.title-tab):after, #project-reports-tabs li:not(.title-tab):after, #leads-reports-tabs li:not(.title-tab):after, #tickets-reports-tabs li:not(.title-tab):after, #clients-view-tabs li:not(.title-tab):after, #project-tabs li:not(.title-tab):after {
 	bottom: 0px !important;
 }
 
@@ -7664,18 +7672,16 @@ table tbody tr td a,table tbody tr td a:hover {
 .bg-project-timeline-success-restructure{
 	background: #0E0A1E;
     border: 1px solid #0E0A1E;
-    border-radius: 0px 16px;
-    padding: 0.7rem 1.5rem;
-    font-size: 1.5rem;
+    padding: 0.3rem 0.9rem;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 
 .bg-project-timeline-warning-restructure{
 	background: #F38E63;
     border: 1px solid #F38E63;
-    border-radius: 0px 16px;
-    padding: 0.7rem 1.5rem;
-    font-size: 1.5rem;
+    padding: 0.3rem 0.9rem;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 
@@ -7831,3 +7837,30 @@ table tbody tr td a,table tbody tr td a:hover {
 .box-shadow-left-bottom-side{
     box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.10), 0 10px 20px -10px rgba(0, 0, 0, 0.10)!important;
 }
+<<<<<<< HEAD
+=======
+/*sandip 7 June*/
+/*client details file section*/
+#client-files-tabs li:not(.title-tab):after {
+	bottom: 0px !important;
+	border-bottom: 2px solid !important;
+}
+/*client details file section*/
+
+/*project staticstic section*/
+.project-progress-chart-restructure {
+	background-color: #FABFA2 !important;
+}
+
+.project-card-restructure{
+	border-radius: 1px 1px 15px 1px !important;
+    color: #0E0A1E;
+}
+
+.navigation_icon {
+  width: 22px;
+  height: 22px;
+}
+/* project staticstic section*/
+/*sandip 7 June*/
+>>>>>>> 673ba64fb2ddbeb2646c5a61384a04e8547eec3c
