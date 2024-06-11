@@ -5393,11 +5393,11 @@ svg:not(.gantt) {
   background: #f2f2f2;
 }
 .help-search-box {
-  background: url(../images/search.png) no-repeat 15px 50% #fff;
+  background: url(../images/search.png) no-repeat right 15px center #fff;
   padding: 15px 15px 15px 40px;
   height: auto;
   border: 1px solid #fff;
-  border-radius: 2px;
+  border-radius: 21px;
   box-shadow: none;
   transition: background 0.5s;
 }
@@ -7533,11 +7533,11 @@ a{
 	width: fit-content !important;
 }
 
-#order-tabs li:not(.title-tab):after, #contract-tabs li:not(.title-tab):after, #estimate-tabs li:not(.title-tab):after, #proposal-tabs li:not(.title-tab):after, #client-tabs li:not(.title-tab):after, #attendance-tabs li:not(.title-tab):after, #leave-tabs li:not(.title-tab):after, #project-files-tabs li:not(.title-tab):after, #project-timesheet-tabs li:not(.title-tab):after {
+#order-tabs li:not(.title-tab):after, #contract-tabs li:not(.title-tab):after, #estimate-tabs li:not(.title-tab):after, #proposal-tabs li:not(.title-tab):after, #client-tabs li:not(.title-tab):after, #attendance-tabs li:not(.title-tab):after, #leave-tabs li:not(.title-tab):after, #project-files-tabs li:not(.title-tab):after, #project-timesheet-tabs li:not(.title-tab):after, #setting-task-tabs li:not(.title-tab):after, #setting-order-tabs li:not(.title-tab):after, #setting-project-tabs li:not(.title-tab):after, #ticket-type-tabs li:not(.title-tab):after, #setting-lead-status-tabs li:not(.title-tab):after {
 	bottom: 2px !important;
 }
 
-#invoices-tabs li:not(.title-tab):after, #payment-received-tabs li:not(.title-tab):after, #task-tabs li:not(.title-tab):after, #token-tabs li:not(.title-tab):after, #expenses-tabs li:not(.title-tab):after , #project-all-timesheet-tabs li:not(.title-tab):after, #income-vs-expenses-chart-tabs li:not(.title-tab):after, #summary-summary-tabs li:not(.title-tab):after, #payment-summary-tabs li:not(.title-tab):after, #invoices-summary-tabs li:not(.title-tab):after, #project-reports-tabs li:not(.title-tab):after, #leads-reports-tabs li:not(.title-tab):after, #tickets-reports-tabs li:not(.title-tab):after, #clients-view-tabs li:not(.title-tab):after, #project-tabs li:not(.title-tab):after {
+#invoices-tabs li:not(.title-tab):after, #payment-received-tabs li:not(.title-tab):after, #task-tabs li:not(.title-tab):after, #token-tabs li:not(.title-tab):after, #expenses-tabs li:not(.title-tab):after , #project-all-timesheet-tabs li:not(.title-tab):after, #income-vs-expenses-chart-tabs li:not(.title-tab):after, #summary-summary-tabs li:not(.title-tab):after, #payment-summary-tabs li:not(.title-tab):after, #invoices-summary-tabs li:not(.title-tab):after, #project-reports-tabs li:not(.title-tab):after, #leads-reports-tabs li:not(.title-tab):after, #tickets-reports-tabs li:not(.title-tab):after, #clients-view-tabs li:not(.title-tab):after, #project-tabs li:not(.title-tab):after, #kanban-task-tab li:not(.title-tab):after, #gnatt-task-tab li:not(.title-tab):after, #leads-tab li:not(.title-tab):after, #kanban-leads-tab li:not(.title-tab):after, #leads-info-tabs li:not(.title-tab):after, #contarct_details_tabs li:not(.title-tab):after, #proposal-details-tabs li:not(.title-tab):after, #integration-tab li:not(.title-tab):after, #setting-invoice-tabs li:not(.title-tab):after, #setting-estimate-tabs li:not(.title-tab):after, #setting-proposal-tabs li:not(.title-tab):after, #setting-contract-tabs li:not(.title-tab):after, #custom-field-tab li:not(.title-tab):after {
 	bottom: 0px !important;
 }
 
@@ -7856,4 +7856,16 @@ table tbody tr td a,table tbody tr td a:hover {
   height: 22px;
 }
 /*project staticstic section*/
+/*subscription*/
+.badge-restructure{
+	font-size: 1.1rem;
+    padding: 5px 18px;
+    font-weight: bold;
+    background: #F38E63 !important;
+    border-color: #F38E63 !important;
+    border-radius: 12px;
+}
+/*subscription*/
 /*sandip 7 June*/
+
+
