@@ -46,7 +46,7 @@
                             <div class="clearfix">
                                 <?php if ($is_estimate_editable) { ?>
                                     <div class="float-start mt20 ml15">
-                                        <?php echo modal_anchor(get_uri("evaluations/item_modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_item'), array("class" => "btn btn-info text-white", "title" => app_lang('add_item'), "data-post-estimate_id" => $estimate_info->id)); ?>
+                                        <?php echo modal_anchor(get_uri("evaluations/item_modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_item'), array("class" => "btn btn-info btn-sales-action text-white", "title" => app_lang('add_item'), "data-post-estimate_id" => $estimate_info->id)); ?>
                                     </div>
                                 <?php } ?>
                                 <div class="float-end pr15" id="estimate-total-section">

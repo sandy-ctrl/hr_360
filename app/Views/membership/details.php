@@ -56,39 +56,39 @@
                             echo view('membership/subscription_parts/header_style_1.php', $data);
                             ?>
                         </div>
-                        <div class="col-md-12 mb15">
+                        <div class="col-md-12 b-b mb15 pb10">
                             <strong><?php echo app_lang('client') . ": "; ?></strong><?php echo (anchor(get_uri("patrons/view/" . $subscription_info->client_id), $subscription_info->company_name)); ?>
                         </div>
-                        <div class="col-md-12 mb15">
+                        <div class="col-md-12 b-b mb15 pb10">
                             <strong><?php echo app_lang('status') . ": "; ?></strong><?php echo $subscription_status_label; ?>
                         </div>
-                        <div class="col-md-12 mb15">
+                        <div class="col-md-12 b-b mb15 pb10">
                             <strong><?php echo app_lang('type') . ": "; ?></strong><?php echo $subscription_type_label; ?>
                         </div>
                         <?php if ($subscription_info->labels_list) { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 b-b mb15 pb10">
                                 <strong><?php echo app_lang('label') . ": "; ?></strong><?php echo make_labels_view_data($subscription_info->labels_list, "", true); ?>
                             </div>
                         <?php } ?>
                         <?php if ($subscription_info->payment_status === "failed") { ?>
-                            <div class="col-md-12 mb15"><?php
+                            <div class="col-md-12 b-b mb15 pb10"><?php
                                 echo "<strong>" . app_lang("payment_status") . ": </strong>" . "<span class='mt0 badge bg-danger large'>" . app_lang("failed") . "</span>";
                                 ?>
                             </div> 
                         <?php } ?>
                         <?php if ($subscription_info->cancelled_at) { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 b-b mb15 pb10">
                                 <strong><?php echo app_lang('cancelled_at') . ": "; ?></strong><?php echo format_to_relative_time($subscription_info->cancelled_at); ?>
                             </div>
                         <?php } ?>
 
                         <?php if ($subscription_info->cancelled_by) { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 b-b mb15 pb10">
                                 <strong><?php echo app_lang('cancelled_by') . ": "; ?></strong><?php echo get_team_member_profile_link($subscription_info->cancelled_by, $subscription_info->cancelled_by_user); ?>
                             </div>
                         <?php } ?>
 
-                        <div class="col-md-12 mb15">
+                        <div class="col-md-12 b-b mb15 pb10">
                             <strong><?php echo app_lang('repeat_every') . ": "; ?></strong><?php echo $subscription_info->repeat_every . " " . app_lang("interval_" . $subscription_info->repeat_type); ?>
                         </div>
 
@@ -99,7 +99,7 @@
                         }
                         ?>
                         <?php if (can_access_reminders_module()) { ?>
-                            <div class="col-md-12 mb15" id="subscription-reminders">
+                            <div class="col-md-12 b-b mb15 pb10" id="subscription-reminders">
                                 <div class="mb15"><strong><?php echo app_lang("reminders") . " (" . app_lang('private') . ")" . ": "; ?> </strong></div>
                                 <?php echo view("reminders/reminders_view_data", array("subscription_id" => $subscription_info->id, "hide_form" => true, "reminder_view_type" => "subscription")); ?>
                             </div>

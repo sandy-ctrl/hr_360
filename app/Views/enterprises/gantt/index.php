@@ -15,7 +15,7 @@ if (!$project_id) {
     <div class="tab-title clearfix gantt-view">
 
         <?php if (isset($show_tasks_tab) && $show_tasks_tab == true) { ?>
-            <ul class="nav nav-tabs bg-white title" role="tablist">
+            <ul id="gnatt-task-tab" class="nav nav-tabs title" role="tablist" style="border-bottom: none;">
                 <li class="title-tab"><h4 class="pl15 pt10 pr15"><?php echo app_lang("tasks"); ?></h4></li>
                 <?php echo view("responsibility/tabs", array("active_tab" => "gantt", "selected_tab" => "")); ?>       
             </ul>

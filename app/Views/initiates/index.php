@@ -1,5 +1,5 @@
 <div id="page-content" class="page-wrapper clearfix grid-button leads-view">
-    <ul class="nav nav-tabs title" role="tablist">
+    <ul id="leads-tab" class="nav nav-tabs title" role="tablist">
         <li class="title-tab leads-title-section"><h4 class="pl15 pt10 pr15"><?php echo app_lang("leads"); ?></h4></li>
 
         <?php echo view("initiates/tabs", array("active_tab" => "leads_list")); ?>
