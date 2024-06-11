@@ -10,13 +10,13 @@
                 <div class="clearfix p20">
                     <div class="row">
                         <?php if ($login_user->user_type === "staff" && $ticket_info->client_id) { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("client") . ": "; ?></strong>
                                 <?php echo $ticket_info->company_name ? anchor(get_uri("patrons/view/" . $ticket_info->client_id), $ticket_info->company_name) : "-"; ?>
                             </div>
 
                             <?php if ($ticket_info->requested_by) { ?>
-                                <div class="col-md-12 mb15">
+                                <div class="col-md-12 mb15 b-b pb10">
                                     <strong><?php echo app_lang("requested_by") . ": "; ?></strong>
                                     <?php echo anchor(get_uri("patrons/contact_profile/" . $ticket_info->requested_by), $ticket_info->requested_by_name ? $ticket_info->requested_by_name : ""); ?>
                                 </div>
@@ -24,7 +24,7 @@
 
                         <?php } ?>
 
-                        <div class="col-md-12 mb15">
+                        <div class="col-md-12 mb15 b-b pb10">
                             <strong><?php echo app_lang('status') . ": "; ?></strong>
                             <?php
                             $ticket_status_class = "bg-danger";
@@ -44,33 +44,33 @@
                         </div>
 
                         <?php if ($ticket_info->labels_list) { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("label") . ": "; ?></strong>
                                 <?php echo make_labels_view_data($ticket_info->labels_list); ?>
                             </div>
                         <?php } ?>
 
                         <?php if ($ticket_info->project_id != "0" && $show_project_reference == "1") { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("project") . ": "; ?></strong>
                                 <?php echo $ticket_info->project_title ? anchor(get_uri("enterprises/view/" . $ticket_info->project_id), $ticket_info->project_title) : "-"; ?>
                             </div>
                         <?php } ?>
 
-                        <div class="col-md-12 mb15">
+                        <div class="col-md-12 mb15 b-b pb10">
                             <strong><?php echo app_lang("created") . ": "; ?></strong>
                             <?php echo format_to_relative_time($ticket_info->created_at); ?> 
                         </div>
 
                         <?php if ($ticket_info->closed_at && $ticket_info->status == "closed") { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("closed") . ": "; ?></strong>
                                 <?php echo format_to_relative_time($ticket_info->closed_at); ?> 
                             </div>
                         <?php } ?>
 
                         <?php if ($ticket_info->ticket_type) { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("ticket_type") . ": "; ?></strong>
                                 <?php echo $ticket_info->ticket_type; ?> 
                             </div>
@@ -83,7 +83,7 @@
                             $image_url = get_avatar($ticket_info->assigned_to_avatar);
                             $assigned_to_user = "<span class='avatar avatar-xs mr10'><img src='$image_url' alt='...'></span> $ticket_info->assigned_to_user";
                             ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("assigned_to") . ": "; ?></strong>
                                 <?php echo get_team_member_profile_link($ticket_info->assigned_to, $assigned_to_user); ?>
                             </div>
@@ -92,14 +92,14 @@
                         ?>
 
                         <?php if ($ticket_info->task_id != "0") { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("task") . ": "; ?></strong>
                                 <?php echo modal_anchor(get_uri("responsibility/view"), $ticket_info->task_title, array("title" => app_lang('task_info') . " #$ticket_info->task_id", "data-post-id" => $ticket_info->task_id, "data-modal-lg" => "1")) ?>
                             </div>
                         <?php } ?>
 
                         <?php if ($ticket_info->merged_with_ticket_id) { ?>
-                            <div class="col-md-12 mb15">
+                            <div class="col-md-12 mb15 b-b pb10">
                                 <strong><?php echo app_lang("moved_to") . ": "; ?></strong>
                                 <?php echo anchor(get_uri("tokens/view/" . $ticket_info->merged_with_ticket_id), get_ticket_id($ticket_info->merged_with_ticket_id), array()); ?>
                             </div>
@@ -120,7 +120,7 @@
                         ?>
 
                         <?php if (can_access_reminders_module()) { ?>
-                            <div class="col-md-12 mb15" id="ticket-reminders">
+                            <div class="col-md-12 mb15 b-b pb10" id="ticket-reminders">
                                 <div class="mb15"><strong><?php echo app_lang("reminders") . " (" . app_lang('private') . ")" . ": "; ?> </strong></div>
                                 <?php echo view("reminders/reminders_view_data", array("ticket_id" => $ticket_info->id, "hide_form" => true, "reminder_view_type" => "ticket")); ?>
                             </div>

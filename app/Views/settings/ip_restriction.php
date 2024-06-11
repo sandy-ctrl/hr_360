@@ -1,7 +1,8 @@
 
 <div class="bg-silver " >
-<br>
-<span class="font-20" style="border:2px !important;" id="menuButton"><i class="border border-dark  setting-arrow" data-feather='chevron-right' class='icon-16'></i> </span><strong class="font-18" >Settings</strong>
+    <?php
+        echo view("settings/tabs_arrow_section");
+    ?>
 </div>
 <div id="page-content" class="page-wrapper-reconstructed  clearfix" >
     <div class="row">
@@ -57,27 +58,6 @@
             onSuccess: function (result) {
                 appAlert.success(result.message, {duration: 10000});
             }
-        });
-    });
-
-        // 5 june harshal
-        document.addEventListener('DOMContentLoaded', function() {
-        var menuButton = document.getElementById('menuButton');
-        var menuContainer = document.getElementById('menuContainer');
-        var mainContent = document.getElementById('mainContent');
-
-        menuButton.addEventListener('click', function() {
-            if (menuContainer.style.display === 'none' || menuContainer.style.display === '') {
-                menuContainer.style.display = 'block';
-                mainContent.classList.add('reduced-width');
-            } else {
-                menuContainer.style.display = 'none';
-                mainContent.classList.remove('reduced-width');
-            }
-            const iconHTML = menuButton.innerHTML;
-            const newIcon = iconHTML.includes('chevron-right') ? 'chevron-left' : 'chevron-right';
-            menuButton.innerHTML = `<i data-feather="${newIcon}" class="border border-dark setting-arrow mr5"></i>`;
-            feather.replace();
         });
     });
 </script>
