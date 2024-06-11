@@ -10,7 +10,7 @@
                 <div class="title-button-group p10">
 
                     <span class="dropdown inline-block">
-                        <button class="btn btn-default dropdown-toggle caret mt0 mb0" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        <button class="btn btn-default btn-sales-action text-white dropdown-toggle caret mt0 mb0" type="button" data-bs-toggle="dropdown" aria-expanded="true" style="color: #FFF !important;">
                             <i data-feather='tool' class='icon-16'></i> <?php echo app_lang('actions'); ?>
                         </button>
                         <ul class="dropdown-menu float-end" role="menu">

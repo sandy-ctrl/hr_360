@@ -531,6 +531,7 @@ $lang["never"] = "Never";
 $lang["email_invoice_to_client"] = "Email invoice to client";
 $lang["download_pdf"] = "Download PDF";
 $lang["print"] = "<i data-feather='printer' class='icon-16'></i>";
+$lang["print_label"] = "Print";
 $lang["actions"] = "Actions";
 $lang["balance_due"] = "Balance Due";
 $lang["paid"] = "Paid";
@@ -975,9 +976,9 @@ $lang["edit_article"] = "Edit article";
 $lang["delete_article"] = "Delete article";
 $lang["can_manage_help_and_knowledge_base"] = "Can manage help and knowledge base?";
 
-$lang["how_can_we_help"] = "How can we help?";
+$lang["how_can_we_help"] = "How can we help you!";
 $lang["help_page_title"] = "Internal Wiki";
-$lang["search_your_question"] = "Search your question";
+$lang["search_your_question"] = "Search";
 $lang["no_result_found"] = "No result found.";
 $lang["sort"] = "Sort";
 $lang["total_views"] = "Total views";
@@ -1316,7 +1317,7 @@ $lang["send_to_client"] = "Send to client";
 $lang["estimate_sent_message"] = "The estimate has been sent!";
 $lang["send_estimate_bcc_to"] = "When sending estimate to client, send BCC to";
 
-$lang["task_settings"] = "Task settings";
+$lang["task_settings"] = "Task Settings";
 $lang["enable_recurring_option_for_tasks"] = "Enable recurring option for tasks";
 $lang["past_recurring_date_error_message_title_for_tasks"] = "The selected start date and repeat type returns a past date.";
 $lang["recurring_task_created_via_cron_job"] = "Recurring task created via Cron Job";
@@ -2138,11 +2139,11 @@ $lang["edit_company"] = "Edit company";
 $lang["delete_company"] = "Delete company";
 $lang["default_company"] = "Default company";
 
-$lang["task_priority"] = "Task priority";
+$lang["task_priority"] = "Task Priority";
 $lang["priority"] = "Priority";
-$lang["add_task_priority"] = "Add task priority";
-$lang["edit_task_priority"] = "Edit task priority";
-$lang["delete_task_priority"] = "Delete task priority";
+$lang["add_task_priority"] = "Add Task Priority";
+$lang["edit_task_priority"] = "Edit Task Priority";
+$lang["delete_task_priority"] = "Delete Task Priority";
 
 $lang["import_items"] = "Import items";
 $lang["import_error_field_required"] = "%s field is required";
@@ -2162,7 +2163,7 @@ $lang["undo"] = "Undo";
 $lang["clone_expense"] = "Clone expense";
 $lang["files_will_not_be_copied"] = "Files will not be copied.";
 
-$lang["checklist_group"] = "Checklist group";
+$lang["checklist_group"] = "Checklist Group";
 $lang["checklists"] = "Checklists";
 $lang["add_checklist_group"] = "Add checklist group";
 $lang["edit_checklist_group"] = "Edit checklist group";

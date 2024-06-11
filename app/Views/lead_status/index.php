@@ -1,6 +1,7 @@
 <div class="bg-silver " >
-<br>
-<span class="font-20" style="border:2px !important;" id="menuButton"><i class="border border-dark  setting-arrow" data-feather='chevron-right' class='icon-16'></i> </span><strong class="font-18" >Settings</strong>
+    <?php
+        echo view("settings/tabs_arrow_section");
+    ?>
 </div>
 <div id="page-content" class="page-wrapper-reconstructed clearfix">
     <div class="row">
@@ -14,7 +15,7 @@
         <div class="col-sm-9 col-lg-10" id="mainContent">
             <div class="card">
 
-                <ul data-bs-toggle="ajax-tab" class="nav nav-tabs bg-white title" role="tablist">
+                <ul id="setting-lead-status-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs title" role="tablist">
                     <li><a role="presentation" data-bs-toggle="tab" href="javascript:;" data-bs-target="#lead-status-tab"> <?php echo app_lang('lead_status'); ?></a></li>
                     <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("lead_source"); ?>" data-bs-target="#lead-source-tab"><?php echo app_lang('lead_source'); ?></a></li>
                     <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("settings/leads"); ?>" data-bs-target="#lead-settings-tab"><?php echo app_lang('leads'); ?></a></li>
@@ -116,27 +117,6 @@
                 addButton.html("<?php echo "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_lead_source'); ?>");
                 feather.replace();
             }
-        });
-    });
-
-           // 5 june harshal
-           document.addEventListener('DOMContentLoaded', function() {
-        var menuButton = document.getElementById('menuButton');
-        var menuContainer = document.getElementById('menuContainer');
-        var mainContent = document.getElementById('mainContent');
-
-        menuButton.addEventListener('click', function() {
-            if (menuContainer.style.display === 'none' || menuContainer.style.display === '') {
-                menuContainer.style.display = 'block';
-                mainContent.classList.add('reduced-width');
-            } else {
-                menuContainer.style.display = 'none';
-                mainContent.classList.remove('reduced-width');
-            }
-            const iconHTML = menuButton.innerHTML;
-            const newIcon = iconHTML.includes('chevron-right') ? 'chevron-left' : 'chevron-right';
-            menuButton.innerHTML = `<i data-feather="${newIcon}" class="border border-dark setting-arrow mr5"></i>`;
-            feather.replace();
         });
     });
 </script>

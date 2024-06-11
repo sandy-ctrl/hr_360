@@ -1,6 +1,7 @@
 <div class="bg-silver " >
-<br>
-<span class="font-20" style="border:2px !important;" id="menuButton"><i class="border border-dark  setting-arrow" data-feather='chevron-right' class='icon-16'></i> </span><strong class="font-18" >Settings</strong>
+    <?php
+        echo view("settings/tabs_arrow_section");
+    ?>
 </div>
 <div id="page-content" class="page-wrapper-reconstructed  clearfix">
     <div class="row">
@@ -11,10 +12,14 @@
             ?>
         </div>
         <div class="col-sm-9 col-lg-10"  id="mainContent">
-
+            <style type="text/css">
+                .nav-tabs.title li a {
+                    padding: 22px 6px 9px;
+                }
+            </style>
             <div class="card no-border clearfix">
 
-                <ul id="custom-field-tab" data-bs-toggle="ajax-tab" class="nav nav-tabs bg-white title scrollable-tabs" role="tablist">
+                <ul id="custom-field-tab" data-bs-toggle="ajax-tab" class="nav nav-tabs title scrollable-tabs" role="tablist">
                     <li class="title-tab"><h4 class="pl15 pt10 pr15"><?php echo app_lang("custom_fields"); ?></h4></li>
                     <li><a role="presentation" data-bs-toggle="tab" data-related_to="clients"  href="javascript:;" data-bs-target="#custom-field-clients"><?php echo app_lang("clients"); ?></a></li>
                     <li><a role="presentation" data-bs-toggle="tab" data-related_to="client_contacts" class="" href="<?php echo_uri("custom_fields/client_contacts/"); ?>" data-bs-target="#custom-field-client_contacts"><?php echo app_lang("client_contacts"); ?></a></li>
@@ -162,25 +167,4 @@
             }
         });
     };
-
-       // 5 june harshal
-       document.addEventListener('DOMContentLoaded', function() {
-        var menuButton = document.getElementById('menuButton');
-        var menuContainer = document.getElementById('menuContainer');
-        var mainContent = document.getElementById('mainContent');
-
-        menuButton.addEventListener('click', function() {
-            if (menuContainer.style.display === 'none' || menuContainer.style.display === '') {
-                menuContainer.style.display = 'block';
-                mainContent.classList.add('reduced-width');
-            } else {
-                menuContainer.style.display = 'none';
-                mainContent.classList.remove('reduced-width');
-            }
-            const iconHTML = menuButton.innerHTML;
-            const newIcon = iconHTML.includes('chevron-right') ? 'chevron-left' : 'chevron-right';
-            menuButton.innerHTML = `<i data-feather="${newIcon}" class="border border-dark setting-arrow mr5"></i>`;
-            feather.replace();
-        });
-    });
 </script>

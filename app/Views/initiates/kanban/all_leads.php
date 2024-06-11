@@ -1,6 +1,6 @@
 <div id="page-content" class="page-wrapper pb0 clearfix">
 
-    <ul class="nav nav-tabs bg-white title" role="tablist">
+    <ul id="kanban-leads-tab" class="nav nav-tabs title" role="tablist">
         <li class="title-tab"><h4 class="pl15 pt10 pr15"><?php echo app_lang("leads"); ?></h4></li>
 
         <?php echo view("initiates/tabs", array("active_tab" => "leads_kanban")); ?>      
