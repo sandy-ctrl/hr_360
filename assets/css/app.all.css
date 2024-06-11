@@ -7981,9 +7981,30 @@ header .calendar-current-date {
 
 
 /* Default calender  */
-
-
 #event-calendar thead{
   background:#F5F5F5 !important;
+}
+.header-white-bg {
+  background-color: white !important;
+}
+
+/* 11 june */
+.orange-circle {
+  width: 8px;
+  height: 8px;
+  background-color:#FE5F10;
+  border-radius: 50%;
+  display: inline-block;
+}
+#todays-event-list .line{
+  margin-top: 10px; 
+  margin-bottom: 0; 
+  width: 15px;
+  height: 2px; 
+  background-color: black;
+}
+#todays-event-list{
+  min-height: 351px !important;
+  overflow: scroll !important;
 }
 

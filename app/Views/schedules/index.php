@@ -60,7 +60,7 @@ if (isset($client_id)) {
             </div>
         </div>
         <div class="row card-body">
-            <div class="col-md-3">
+            <div class="col-md-3" >
                 <!-- mini calendor starts -->
                 <div class="calendar-container" id="mini-calendor">
                     <div class="calendar-body ">
@@ -86,12 +86,81 @@ if (isset($client_id)) {
                 </div>
                 <!-- mini-calendor ends  -->
 
-                <div class="calendar-body todays-event" id="todays-event-list">
-                    <h4 class="text-center fw-bold"><i data-feather='calendar' class='icon-16'></i> Today's Events</h4>
-                    
-                </div>
-                <div class="calendar-body yesterday-event" id="yesterday-event-list">
-                    <h4 class="text-center fw-bold"> Yesterday's Events</h4>
+                <div class="accordion mt20" id="event-list" style="max-height: 750px;" >
+                    <div class="accordion-item calendar-body">
+                        <h4 class="accordion-header fw-bold ">
+                            <span class="accordion-button bg-white text-dark font-16 " type="button"
+                                data-bs-toggle="collapse" data-bs-target="#todays-event-list" aria-expanded="true"
+                                aria-controls="todays-event-list"><i data-feather='calendar' class='icon-16 mr10'></i>
+                                Today's Event
+                            </span>
+                        </h4>
+                        <div class="accordion-collapse collapse show event-list" data-bs-parent="#event-list"
+                            id="todays-event-list"  >
+                            <div class="accordion-body ">
+                                <?php if (!empty($todays_events)): ?>
+                                    <?php foreach ($todays_events as $key => $event): ?>
+                                        <div class="row p10 <?php if ($key !== count($todays_events) - 1)
+                                            echo 'border-bottom'; ?>">
+                                            <div class="col-1 col-sm-auto">
+                                                <hr class="line">
+                                            </div>
+                                            <div class="col-5 col-sm-3" style="color:#FE5F10;">
+                                                <?php
+                                                // if (is_date_exists($event->start_time) && $event->start_time == "00:00:00") {
+                                                //     $start_time = "";
+                                                // } else {
+                                                //     $start_time = $event->start_time;
+                                                // }
+                                                // if ($time_format_24_hours) {
+                                                //     $start_time = $start_time ? date("H:i", strtotime($start_time)) : "";
+                                                // } else {
+                                                //     $start_time = $start_time ? convert_time_to_12hours_format(date("H:i:s", strtotime($start_time))) : "";
+                                                // }
+                                                echo $event->start_time; ?>
+                                            </div>
+                                            <div class="col-1 col-sm-auto">
+                                                <div class="orange-circle"></div>
+                                            </div>
+                                            <div class="col-5 col-sm-6">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="title"><?php echo $event->title; ?></div>
+                                                        <div class="description"><?php echo $event->description; ?></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                    </ul>
+                                <?php else: ?>
+                                    <p>No events for today.</p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="accordion-item mt20 calendar-body ">
+                        <h4 class="accordion-header  fw-bold ">
+                            <span class="accordion-button collapsed bg-white text-dark font-16" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#yesterday-event-list" aria-expanded="false"
+                                aria-controls="yesterday-event-list">
+                                Yesterday's Event
+                            </span>
+                        </h4>
+                        <div class="accordion-collapse collapse event-list " data-bs-parent="#event-list"
+                            id="yesterday-event-list">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis magnam corrupti quae
+                                cumque
+                                obcaecati nisi labore asperiores praesentium, quaerat natus beatae dolores nemo facilis
+                                placeat, dolorem, delectus iste iusto? Dolore culpa ab voluptatum, laborum impedit
+                                tempora
+                                necessitatibus? Vero exercitationem, voluptates vitae iste, hic nostrum sed similique
+                                corrupti, dolorum earum nulla?
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
             <!-- Default event calendor  -->
@@ -162,7 +231,6 @@ if (isset($client_id)) {
             eventContent: function (element) {
                 var icon = element.event.extendedProps.icon;
                 var title = element.event.title;
-                // console.log( element.event.backgroundColor);
                 if (icon) {
                     title = "<span class='clickable p5 w100p inline-block' style='background-color: " + element.event.backgroundColor + "; color: #fff'><span><i data-feather='" + icon + "' class='icon-16'></i> " + title + "</span></span>";
                 }
