@@ -222,6 +222,13 @@ class Schedules_model extends Crud_model {
         return $this->db->query($sql);
     }
 
+    // 11 june harshal : to get todays events
+    function get_todays_events() {
+        $events_table = $this->db->prefixTable('events');
+        // $today = date('Y-m-d');
+        $sql = "SELECT $events_table.*  FROM $events_table WHERE CURDATE() BETWEEN $events_table.start_date AND $events_table.end_date AND $events_table.deleted=0 ORDER BY $events_table.id DESC";
+        return $this->db->query($sql);
+    }
     function count_events_today($options = array()) {
 
         $events_table = $this->db->prefixTable('events');

@@ -1,18 +1,24 @@
 <?php
-load_css(array(
-    "assets/js/fullcalendar/fullcalendar.min.css"
-));
+load_css(
+    array(
+        "assets/js/fullcalendar/fullcalendar.min.css"
 
-load_js(array(
-    "assets/js/fullcalendar/fullcalendar.min.js",
-    "assets/js/fullcalendar/locales-all.min.js"
-));
+    )
+);
+
+load_js(
+    array(
+        "assets/js/fullcalendar/fullcalendar.min.js",
+        "assets/js/fullcalendar/locales-all.min.js"
+    )
+);
 
 $client = "";
 if (isset($client_id)) {
     $client = $client_id;
 }
 ?>
+
 <div id="page-content<?php echo $client; ?>" class="page-wrapper<?php echo $client; ?> clearfix">
     <div class="card mb0 full-width-button">
         <div class="page-title clearfix">
@@ -21,18 +27,21 @@ if (isset($client_id)) {
             <?php } else { ?>
                 <h1><?php echo app_lang('event_calendar'); ?></h1>
             <?php } ?>
-            <div class="title-button-group custom-toolbar events-title-button">
+            <div class="title-button-group  custom-toolbar events-title-button">
 
                 <?php
-                echo form_input(array(
-                    "id" => "event-labels-dropdown",
-                    "name" => "event-labels-dropdown",
-                    "class" => "select2 w200 mr10 float-start mt15"
-                ));
+                echo form_input(
+                    array(
+                        "id" => "event-labels-dropdown",
+                        "name" => "event-labels-dropdown",
+                        "class" => "select2 w200 btn-default mr10 float-start mt15 "
+                    )
+                );
                 ?>
 
                 <?php if ($calendar_filter_dropdown) { ?>
-                    <div id="calendar-filter-dropdown" class="float-start <?php echo (count($calendar_filter_dropdown) == 1) ? "hide" : ""; ?>"></div>
+                    <div id="calendar-filter-dropdown"
+                        class="float-start  <?php echo (count($calendar_filter_dropdown) == 1) ? "hide" : ""; ?>"></div>
                 <?php } ?>
 
                 <?php
@@ -50,20 +59,125 @@ if (isset($client_id)) {
                 <?php echo modal_anchor(get_uri("labels/modal_form"), "<i data-feather='tag' class='icon-16'></i>", array("class" => "btn btn-default", "title" => app_lang('manage_labels'), "data-post-type" => "event")); ?>
             </div>
         </div>
-        <div class="card-body">
-            <div id="event-calendar"></div>
+        <div class="row card-body">
+            <div class="col-md-3" >
+                <!-- mini calendor starts -->
+                <div class="calendar-container" id="mini-calendor">
+                    <div class="calendar-body ">
+                        <header class="calendar-header p10">
+                            <span id="calendar-prev" class="material-symbols-rounded"><i
+                                    data-feather="chevron-left"></i></span>
+                            <p class="calendar-current-date color-black pt5 fw-bold"></p>
+                            <span id="calendar-next" class="material-symbols-rounded"><i
+                                    data-feather="chevron-right"></i></span>
+                        </header>
+                        <ul class="calendar-weekdays  pl0" style="margin-bottom:0px">
+                            <li>S</li>
+                            <li>M</li>
+                            <li>T</li>
+                            <li>W</li>
+                            <li>T</li>
+                            <li>F</li>
+                            <li>S</li>
+                        </ul>
+                        <ul class="calendar-dates mb0"></ul>
+                    </div>
+                    <br>
+                </div>
+                <!-- mini-calendor ends  -->
+
+                <div class="accordion mt20" id="event-list" style="max-height: 750px;" >
+                    <div class="accordion-item calendar-body">
+                        <h4 class="accordion-header fw-bold ">
+                            <span class="accordion-button bg-white text-dark font-16 " type="button"
+                                data-bs-toggle="collapse" data-bs-target="#todays-event-list" aria-expanded="true"
+                                aria-controls="todays-event-list"><i data-feather='calendar' class='icon-16 mr10'></i>
+                                Today's Event
+                            </span>
+                        </h4>
+                        <div class="accordion-collapse collapse show event-list" data-bs-parent="#event-list"
+                            id="todays-event-list"  >
+                            <div class="accordion-body ">
+                                <?php if (!empty($todays_events)): ?>
+                                    <?php foreach ($todays_events as $key => $event): ?>
+                                        <div class="row p10 <?php if ($key !== count($todays_events) - 1)
+                                            echo 'border-bottom'; ?>">
+                                            <div class="col-1 col-sm-auto">
+                                                <hr class="line">
+                                            </div>
+                                            <div class="col-5 col-sm-3" style="color:#FE5F10;">
+                                                <?php
+                                                // if (is_date_exists($event->start_time) && $event->start_time == "00:00:00") {
+                                                //     $start_time = "";
+                                                // } else {
+                                                //     $start_time = $event->start_time;
+                                                // }
+                                                // if ($time_format_24_hours) {
+                                                //     $start_time = $start_time ? date("H:i", strtotime($start_time)) : "";
+                                                // } else {
+                                                //     $start_time = $start_time ? convert_time_to_12hours_format(date("H:i:s", strtotime($start_time))) : "";
+                                                // }
+                                                echo $event->start_time; ?>
+                                            </div>
+                                            <div class="col-1 col-sm-auto">
+                                                <div class="orange-circle"></div>
+                                            </div>
+                                            <div class="col-5 col-sm-6">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="title"><?php echo $event->title; ?></div>
+                                                        <div class="description"><?php echo $event->description; ?></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                    </ul>
+                                <?php else: ?>
+                                    <p>No events for today.</p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="accordion-item mt20 calendar-body ">
+                        <h4 class="accordion-header  fw-bold ">
+                            <span class="accordion-button collapsed bg-white text-dark font-16" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#yesterday-event-list" aria-expanded="false"
+                                aria-controls="yesterday-event-list">
+                                Yesterday's Event
+                            </span>
+                        </h4>
+                        <div class="accordion-collapse collapse event-list " data-bs-parent="#event-list"
+                            id="yesterday-event-list">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis magnam corrupti quae
+                                cumque
+                                obcaecati nisi labore asperiores praesentium, quaerat natus beatae dolores nemo facilis
+                                placeat, dolorem, delectus iste iusto? Dolore culpa ab voluptatum, laborum impedit
+                                tempora
+                                necessitatibus? Vero exercitationem, voluptates vitae iste, hic nostrum sed similique
+                                corrupti, dolorum earum nulla?
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Default event calendor  -->
+            <div class="col-md-9" id="event-calendar">
+            </div>
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
     var filterValues = "",
-            eventLabel = "";
+        eventLabel = "";
 
     var loadCalendar = function () {
         var filter_values = filterValues || "events",
-                $eventCalendar = document.getElementById('event-calendar'),
-                event_label = eventLabel || "0";
+            $eventCalendar = document.getElementById('event-calendar'),
+            event_label = eventLabel || "0";
 
         appLoader.show();
 
@@ -179,4 +293,66 @@ if (isset($client_id)) {
             feather.replace();
         });
     });
+    // ...........mini calendor : 10 june harshal .............
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth();
+    const day = document.querySelector(".calendar-dates");
+    const currdate = document.querySelector(".calendar-current-date");
+    const prenexIcons = document.querySelectorAll(".calendar-header span");
+    const weekdayElements = document.querySelectorAll(".calendar-weekdays li");
+    const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    // Function to generate the calendar
+    const manipulate = () => {
+        let dayOne = new Date(year, month, 1).getDay();
+        let lastDate = new Date(year, month + 1, 0).getDate();
+        let dayEnd = new Date(year, month, lastDate).getDay();
+        let monthLastDate = new Date(year, month, 0).getDate();
+        let lit = "";
+
+        // Adding previous month's last days to the calendar
+        for (let i = dayOne; i > 0; i--) {
+            lit += `<li class="inactive">${monthLastDate - i + 1}</li>`;
+        }
+
+        // Adding current month's days to the calendar
+        for (let i = 1; i <= lastDate; i++) {
+            let isToday = (i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) ? "active" : "";
+            lit += `<li class="${isToday}">${i}</li>`;
+        }
+
+        // Adding next month's first days to the calendar
+        for (let i = dayEnd; i < 6; i++) {
+            lit += `<li class="inactive">${i - dayEnd + 1}</li>`;
+        }
+
+        // Display current month and year
+        currdate.innerText = `${months[month]} ${year}`;
+        day.innerHTML = lit;
+
+        // Highlight current weekday
+        const currentDay = date.getDay();
+        weekdayElements.forEach((el, index) => {
+            el.classList.toggle("highlight", index === currentDay);
+        });
+    }
+    manipulate();
+    prenexIcons.forEach(icon => {
+        icon.addEventListener("click", () => {
+            month = icon.id === "calendar-prev" ? month - 1 : month + 1;
+
+            if (month < 0 || month > 11) {
+                date = new Date(year, month, new Date().getDate());
+                year = date.getFullYear();
+                month = date.getMonth();
+            } else {
+                date = new Date();
+            }
+            manipulate();
+        });
+    });
+    // mini calendor ends 
 </script>
