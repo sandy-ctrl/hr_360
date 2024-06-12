@@ -736,7 +736,7 @@ if (!function_exists('get_invoice_status_label')) {
             $status = "draft";
         }
 
-        $invoice_status = "<span class='mt0 badge $invoice_status_class large'>" . app_lang($status) . "</span>";
+        $invoice_status = "<span class='mt0 badge $invoice_status_class large badge-restructure'>" . app_lang($status) . "</span>";
         if ($return_html) {
             return $invoice_status;
         } else {
@@ -2402,7 +2402,7 @@ if (!function_exists('get_subscription_status_label')) {
             $status = "cancelled";
         }
 
-        $subscription_status = "<span class='mt0 badge $subscription_status_class large'>" . app_lang($status) . "</span>";
+        $subscription_status = "<span class='mt0 badge $subscription_status_class large badge-restructure'>" . app_lang($status) . "</span>";
         if ($return_html) {
             return $subscription_status;
         } else {

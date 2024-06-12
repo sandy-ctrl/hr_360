@@ -37,8 +37,8 @@
                         </div>
                     </div>
 
-                    <ul id="subscription-tabs" data-bs-toggle="ajax-tab" class="nav nav-pills rounded classic mb20 scrollable-tabs border-white" role="tablist">
-                        <li><a role="presentation" data-bs-toggle="tab"  href="<?php echo_uri("membership/details/" . $subscription_info->id); ?>" data-bs-target="#subscription-details-section"><?php echo app_lang("details"); ?></a></li>
+                    <ul id="subscription-tabs" data-bs-toggle="ajax-tab" class="nav nav-pills rounded classic mb20 scrollable-tabs border-white nav-pills-restructre" role="tablist" style="background: transparent;">
+                        <li><a role="presentation" class="" data-bs-toggle="tab"  href="<?php echo_uri("membership/details/" . $subscription_info->id); ?>" data-bs-target="#subscription-details-section"><?php echo app_lang("details"); ?></a></li>
                         <?php if ($can_view_invoices) { ?>
                             <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("membership/invoices/" . $subscription_info->id); ?>" data-bs-target="#subscription-invoices-section"><?php echo app_lang('invoices'); ?></a></li>
                         <?php } ?>

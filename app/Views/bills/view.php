@@ -28,7 +28,7 @@
                                 <?php echo modal_anchor(get_uri("bill_payments/payment_modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_payment'), array("class" => "btn btn-default", "title" => app_lang('add_payment'), "data-post-invoice_id" => $invoice_info->id)); ?>
                             <?php } ?>
                             <span class="dropdown inline-block">
-                                <button class="btn btn-info text-white dropdown-toggle caret" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                <button class="btn btn-info btn-sales-action text-white dropdown-toggle caret" type="button" data-bs-toggle="dropdown" aria-expanded="true">
                                     <i data-feather="tool" class="icon-16"></i> <?php echo app_lang('actions'); ?>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
@@ -42,7 +42,7 @@
                                     <li role="presentation"><?php echo anchor(get_uri("bills/download_pdf/" . $invoice_info->id), "<i data-feather='download' class='icon-16'></i> " . app_lang('download_pdf'), array("title" => app_lang('download_pdf'), "class" => "dropdown-item")); ?> </li>
                                     <li role="presentation"><?php echo anchor(get_uri("bills/download_pdf/" . $invoice_info->id . "/view"), "<i data-feather='file-text' class='icon-16'></i> " . app_lang('view_pdf'), array("title" => app_lang('view_pdf'), "target" => "_blank", "class" => "dropdown-item")); ?> </li>
                                     <li role="presentation"><?php echo anchor(get_uri("bills/preview/" . $invoice_info->id . "/1"), "<i data-feather='search' class='icon-16'></i> " . app_lang('preview'), array("title" => app_lang('preview'), "target" => "_blank", "class" => "dropdown-item")); ?> </li>
-                                    <li role="presentation"><?php echo js_anchor("<i data-feather='printer' class='icon-16'></i> " . app_lang('print'), array('title' => app_lang('print'), 'id' => 'print-invoice-btn', "class" => "dropdown-item")); ?> </li>
+                                    <li role="presentation"><?php echo js_anchor("<i data-feather='printer' class='icon-16'></i> " . app_lang('print_label'), array('title' => app_lang('print_New'), 'id' => 'print-invoice-btn', "class" => "dropdown-item")); ?> </li>
 
                                     <?php if ($can_edit_invoices && $invoice_info->type == "invoice") { ?>
                                         <li role="presentation" class="dropdown-divider"></li>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
 
-                    <ul id="invoice-tabs" data-bs-toggle="ajax-tab" class="nav nav-pills rounded classic mb20 scrollable-tabs border-white" role="tablist">
+                    <ul id="invoice-tabs" data-bs-toggle="ajax-tab" class="nav nav-pills nav-pills-restructre rounded classic mb20 scrollable-tabs border-white" role="tablist">
                         <li><a role="presentation" data-bs-toggle="tab"  href="<?php echo_uri("bills/details/" . $invoice_info->id); ?>" data-bs-target="#invoice-details-section"><?php echo app_lang("details"); ?></a></li>
                         <?php if ($invoice_info->type == "invoice") { ?>
                             <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("bills/payments/" . $invoice_info->id); ?>" data-bs-target="#invoice-payments-section"><?php echo app_lang('payments'); ?></a></li>

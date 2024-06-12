@@ -11,7 +11,7 @@
 
                         <div class="title-button-group mr0">
                             <span class="dropdown inline-block mt15">
-                                <button class="btn btn-info text-white dropdown-toggle caret mt0 mb0" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                <button class="btn btn-info btn-sales-action text-white dropdown-toggle caret mt0 mb0" type="button" data-bs-toggle="dropdown" aria-expanded="true">
                                     <i data-feather="tool" class="icon-16"></i> <?php echo app_lang('actions'); ?>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
 
-                    <ul id="proposal-tabs" data-bs-toggle="ajax-tab" class="nav nav-pills rounded classic mb20 scrollable-tabs border-white" role="tablist">
+                    <ul id="proposal-tabs" data-bs-toggle="ajax-tab" class="nav nav-pills nav-pills-restructre rounded classic mb20 scrollable-tabs border-white" role="tablist">
                         <li><a role="presentation" data-bs-toggle="tab"  href="javascript:;" data-bs-target="#proposal-details-section"><?php echo app_lang("details"); ?></a></li>
                         <li><a role="presentation" data-bs-toggle="tab" href="<?php echo_uri("plans/tasks/" . $proposal_info->id); ?>" data-bs-target="#proposal-tasks-section"><?php echo app_lang('tasks'); ?></a></li>
                     </ul>

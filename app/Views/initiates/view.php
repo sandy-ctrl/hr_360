@@ -16,7 +16,7 @@
                     </div>
                 </div>
 
-                <ul data-bs-toggle="ajax-tab" class="nav nav-tabs scrollable-tabs" role="tablist">
+                <ul id="leads-info-tabs" data-bs-toggle="ajax-tab" class="nav nav-tabs scrollable-tabs" role="tablist" style="border-bottom:none;">
                     <li><a  role="presentation" data-bs-toggle="tab" href="<?php echo_uri("initiates/contacts/" . $lead_info->id); ?>" data-bs-target="#lead-contacts"> <?php echo app_lang('contacts'); ?></a></li>
                     <li><a  role="presentation" data-bs-toggle="tab" href="<?php echo_uri("initiates/company_info_tab/" . $lead_info->id); ?>" data-bs-target="#lead-info"> <?php echo app_lang('lead_info'); ?></a></li>
                     <li><a  role="presentation" data-bs-toggle="tab" href="<?php echo_uri("initiates/tasks/" . $lead_info->id); ?>" data-bs-target="#lead-tasks"><?php echo app_lang('tasks'); ?></a></li>

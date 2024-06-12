@@ -40,7 +40,7 @@
                         <div class="clearfix">
                             <?php if ($can_edit_invoices) { ?>
                                 <div class="float-start mt20 ml15">
-                                    <?php echo modal_anchor(get_uri("bills/item_modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_item'), array("class" => "btn btn-info text-white", "title" => app_lang('add_item'), "data-post-invoice_id" => $invoice_info->id)); ?>
+                                    <?php echo modal_anchor(get_uri("bills/item_modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_item'), array("class" => "btn btn-info btn-sales-action text-white", "title" => app_lang('add_item'), "data-post-invoice_id" => $invoice_info->id)); ?>
                                 </div>
                             <?php } ?>
                             <div class="float-end pr15" id="invoice-total-section">
