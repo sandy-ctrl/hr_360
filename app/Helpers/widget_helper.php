@@ -55,7 +55,6 @@ if (!function_exists('activity_logs_widget')) {
 
         echo $view_data["result_remaining"] = view("activity_logs/activity_logs_widget", $view_data);
     }
-
 }
 
 /**

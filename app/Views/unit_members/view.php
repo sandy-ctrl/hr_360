@@ -1,7 +1,8 @@
 <?php echo view("includes/cropbox"); ?>
-<div id="page-content" class="clearfix">
+<div id="page-content" class=" clearfix">
     <div class="row">
-        <div class="col-sm-3 col-lg-3  clearfix" style="background-color: #FBFBFB;" >
+        <div class=" p20 col-sm-3 col-lg-3  clearfix"  >
+        <!-- style="background-color: #FBFBFB;" -->
             <div class="">
                 <div class="">
                     <div class="row p0">
@@ -10,12 +11,11 @@
                 </div>
 
                 <div class="col-md-12 text-center cover-widget">
-                    <div class="row p20">
+                    <div class="row ml15">
                         <?php
                         if ($show_projects_count) {
                             echo count_project_status_widget($user_info->id);
                         }
-
                         echo count_total_time_widget($user_info->id);
                         ?>
                     </div>

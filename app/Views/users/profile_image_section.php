@@ -37,11 +37,10 @@
             </div>
         <?php } ?>
 
-        <h4 class="profile-name"><?php echo $user_info->first_name . " " . $user_info->last_name; ?></h4>
+        <h4 class="profile-name"><strong><?php echo $user_info->first_name . " " . $user_info->last_name; ?></strong></h4>
 
         <?php if ($show_cotact_info) { ?>
-            <p class="contact-info"><i data-feather="mail" class="icon-16"></i>
-                <?php echo $user_info->email ? $user_info->email : "-"; ?></p>
+            <p class="contact-info"><!--<i data-feather="mail" class="icon-16"></i> --><?php echo $user_info->email ? $user_info->email : "-"; ?></p>
             <?php if ($user_info->phone || $user_info->skype) { ?>
                 <p class="contact-info">
                     <?php // if ($user_info->phone) { ?>
@@ -113,7 +112,6 @@
                 $(this).removeClass("box-content");
             });
         }
-
         $('[data-bs-toggle="tooltip"]').tooltip();
     });
 </script>
