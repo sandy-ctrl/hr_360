@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box tab-title mb15 pb15">
     <div class="box-content border-end">
         <div class="card-body">
             <h3 class="open-time-heading a"><?php echo $project_open; ?></h3>
