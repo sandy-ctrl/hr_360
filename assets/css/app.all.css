@@ -4481,8 +4481,12 @@ body.modal-open {
 <<<<<<< HEAD
   border-bottom: 2px solid #DEDEDE;
 =======
+<<<<<<< HEAD
+  border-bottom: 2px solid #DEDEDE;
+=======
   border-bottom: 2px solid #DEDEDE; 
 >>>>>>> 1dc88abe457015e3a5b87bd46ea8a77b503b8874
+>>>>>>> 673ba64fb2ddbeb2646c5a61384a04e8547eec3c
   border-radius: 5px 5px 0 0;
   padding-bottom: .5rem
 }
@@ -7752,10 +7756,6 @@ table tbody tr td a,table tbody tr td a:hover {
 	}
 }
 
-/* harshal */
-/* 5 june */
-/* Settings */
-/* harshal : 4 june */
 .settings-input-color-restructure {
 	background: #FFE7DB !important;
   font-weight: bold;
@@ -7801,7 +7801,7 @@ table tbody tr td a,table tbody tr td a:hover {
       width: 100%;
   }
 }
-/* 6 jun */
+
 .mr25{
   margin-right: 25px !important;
 }
@@ -7809,7 +7809,6 @@ table tbody tr td a,table tbody tr td a:hover {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* harshal tasks 7 june */
 .start-date-icon{
   color: #36AF33;
 }
@@ -7823,7 +7822,7 @@ table tbody tr td a,table tbody tr td a:hover {
 #load-kanban .kanban-container .kanban-col-title span{
   color: #FE5F10 !important;
 }
-/* harshal : My Profile general settings design : 7 june */
+
 .profile-name{
   color: #3C3653;
 }
@@ -7833,21 +7832,18 @@ table tbody tr td a,table tbody tr td a:hover {
 .box-shadow-left-bottom-side{
     box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.10), 0 10px 20px -10px rgba(0, 0, 0, 0.10)!important;
 }
-/*sandip 7 June*/
-/*client details file section*/
+
 #client-files-tabs li:not(.title-tab):after {
 	bottom: 0px !important;
 	border-bottom: 2px solid !important;
 }
-/*client details file section*/
 
-/*project staticstic section*/
 .project-progress-chart-restructure {
 	background-color: #FABFA2 !important;
 }
 
 .project-card-restructure{
-	border-radius: 1px 1px 15px 1px;
+	border-radius: 1px 1px 15px 1px !important;
     color: #0E0A1E;
 }
 
@@ -7855,8 +7851,6 @@ table tbody tr td a,table tbody tr td a:hover {
   width: 22px;
   height: 22px;
 }
-/*project staticstic section*/
-/*subscription*/
 .badge-restructure{
 	font-size: 1.1rem;
     padding: 5px 18px;
@@ -7865,7 +7859,3 @@ table tbody tr td a,table tbody tr td a:hover {
     border-color: #F38E63 !important;
     border-radius: 12px;
 }
-/*subscription*/
-/*sandip 7 June*/
-
-

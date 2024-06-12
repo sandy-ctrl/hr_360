@@ -62,16 +62,16 @@
                 <!-- Second Row: Alternative Address, Phone, Alternative Phone -->
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <label for="alternative_address"
-                            class="control-label"><?php echo app_lang('alternative_address'); ?></label>
+                        <label for="alternative_phone"
+                            class="control-label"><?php echo app_lang('alternative_phone'); ?></label>
                         <?php
-                        echo form_textarea(
+                        echo form_input(
                             array(
-                                "id" => "alternative_address",
-                                "name" => "alternative_address",
-                                "value" => $user_info->alternative_address,
+                                "id" => "alternative_phone",
+                                "name" => "alternative_phone",
+                                "value" => $user_info->alternative_phone,
                                 "class" => "form-control form-control-restructure",
-                                "placeholder" => app_lang('alternative_address')
+                                "placeholder" => app_lang('alternative_phone')
                             )
                         );
                         ?>
@@ -93,25 +93,23 @@
                         ?>
                     </div>
                 </div>
-                
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <label for="alternative_phone"
-                            class="control-label"><?php echo app_lang('alternative_phone'); ?></label>
+                        <label for="alternative_address"
+                            class="control-label"><?php echo app_lang('alternative_address'); ?></label>
                         <?php
-                        echo form_input(
+                        echo form_textarea(
                             array(
-                                "id" => "alternative_phone",
-                                "name" => "alternative_phone",
-                                "value" => $user_info->alternative_phone,
+                                "id" => "alternative_address",
+                                "name" => "alternative_address",
+                                "value" => $user_info->alternative_address,
                                 "class" => "form-control form-control-restructure",
-                                "placeholder" => app_lang('alternative_phone')
+                                "placeholder" => app_lang('alternative_address')
                             )
                         );
                         ?>
                     </div>
                 </div>
-
                 <!-- Third Row: Skype, Date of Birth, SSN -->
                 <div class="col-sm-4">
                     <div class="form-group">
@@ -203,7 +201,7 @@
             <?php echo view("custom_fields/form/prepare_context_fields", array("custom_fields" => $custom_fields, "label_column" => "control-label", "field_column" => " col-md-112")); ?>
 
         </div>
-        <div class="card-footer rounded-0">
+        <div class="card-footer rounded-3">
             <button type="submit" class="btn btn-primary btn-sales-action float-end"><span data-feather="check-circle"
                     class="icon-16"></span> <?php echo app_lang('save'); ?></button>
         </div>
