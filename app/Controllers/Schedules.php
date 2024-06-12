@@ -26,6 +26,9 @@ class Schedules extends Security_Controller {
         $view_data['encrypted_event_id'] = clean_data($encrypted_event_id);
         $view_data['calendar_filter_dropdown'] = $this->get_calendar_filter_dropdown();
         $view_data['event_labels_dropdown'] = json_encode($this->make_labels_dropdown("event", "", true, app_lang("event_label")));
+        // harshal 11 june
+        $view_data['time_format_24_hours'] = get_setting("time_format") == "24_hours" ? true : false;
+        $view_data["todays_events"] = $this->Schedules_model->get_todays_events()->getResult(); 
         return $this->template->rander("schedules/index", $view_data);
     }
 

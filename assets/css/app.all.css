@@ -7852,6 +7852,7 @@ table tbody tr td a,table tbody tr td a:hover {
   width: 22px;
   height: 22px;
 }
+
 /*project staticstic section*/
 /*subscription*/
 .badge-restructure{
@@ -7866,6 +7867,149 @@ table tbody tr td a,table tbody tr td a:hover {
 /*sandip 7 June*/
 
 
-=======
 /* project staticstic section*/
 /*sandip 7 June*/
+
+/* 10 june harshal  */
+/* ------------css for mini calendor ----------- */
+.calendar-container{
+	background: #fff;
+	width: 450px;
+  /* border: 5px solid black !important;
+  border-radius: 30px !important; */
+}
+.calendar-container header {
+	display: flex;
+	align-items: center;
+	padding: 0px -1px 15px;
+	justify-content: space-between;
+}
+header .calendar-navigation {
+	display: flex;
+}
+header .calendar-navigation span {
+	height: 38px;
+	width: 38px;
+	margin: 0 1px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 38px;
+	border-radius: 50%;
+	user-select: none;
+	color: #aeabab;
+	font-size: 1.9rem;
+}
+.calendar-navigation span:last-child {
+	margin-right: -10px;
+}
+header .calendar-navigation span:hover {
+	background: #f2f2f2;
+}
+header .calendar-current-date {
+	font-weight: 500;
+	font-size: 1.2rem
+}
+.calendar-dates {
+  padding: 0px 3px;
+  padding-bottom: 12px;
+}
+.calendar-dates li{
+  font-size: 10px !important;
+}
+.calendar-body{
+  box-shadow: -5px 0px 10px -3px rgba(0, 0, 0, 0.05),5px 0px 10px -3px rgba(0, 0, 0, 0.05), 0px -5px 10px -3px rgba(0, 0, 0, 0.05), 0px 5px 10px -3px rgba(0, 0, 0, 0.05);  
+  border-radius: 18px !important;
+}
+.calendar-body ul {
+	list-style: none;
+	flex-wrap: wrap;
+	display: flex;
+	text-align: center;
+}
+.calendar-body li {
+	width: calc(100% / 7);
+	font-size: 1.07rem;
+  color: black;
+  font-weight:400;
+}
+.calendar-weekdays{
+  display: flex;
+  justify-content: space-between;
+}
+.calendar-weekdays li{
+  color: #797979;
+}
+.calendar-body .calendar-weekdays li {
+	cursor: default;
+	font-weight: 500;
+}
+.calendar-body .calendar-dates li {
+	margin-top: 15px;
+	position: relative;
+	z-index: 1;
+}
+.calendar-dates li.inactive {
+	color: #4e5e6a;
+  font-weight: 400;
+}
+.calendar-dates li.inactive:hover {
+	color: black;
+  font-weight: 400;
+}
+.calendar-dates li.active {
+	color: black;
+  font-weight: bold;
+}
+.calendar-dates li::before {
+	position: absolute;
+	content: "";
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	width: 27px;
+	height: 27px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.calendar-dates li.active::before {
+	background: #E6E2FF;
+}
+/* .calendar-dates li:not(.active):hover::before {
+	background: #E6E2FF;
+} */
+.calendar-weekdays li.highlight {
+  color: #6850FF;
+  font-weight: bold;
+}
+/* ------mini-calendar end--------- */
+
+
+/* Default calender  */
+#event-calendar thead{
+  background:#F5F5F5 !important;
+}
+.header-white-bg {
+  background-color: white !important;
+}
+
+/* 11 june */
+.orange-circle {
+  width: 8px;
+  height: 8px;
+  background-color:#FE5F10;
+  border-radius: 50%;
+  display: inline-block;
+}
+#todays-event-list .line{
+  margin-top: 10px; 
+  margin-bottom: 0; 
+  width: 15px;
+  height: 2px; 
+  background-color: black;
+}
+#todays-event-list{
+  min-height: 351px !important;
+  overflow: scroll !important;
+}
+
