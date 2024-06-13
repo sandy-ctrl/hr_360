@@ -27,7 +27,7 @@
                                     "id" => "email",
                                     "name" => "email",
                                     "value" => $user_info->email,
-                                    "class" => "form-control",
+                                    "class" => "form-control form-control-restructure",
                                     "placeholder" => app_lang('email'),
                                     "autocomplete" => "off",
                                     "data-rule-email" => true,
@@ -49,7 +49,7 @@
                                     echo form_password(array(
                                         "id" => "password",
                                         "name" => "password",
-                                        "class" => "form-control",
+                                        "class" => "form-control form-control-restructure",
                                         "placeholder" => app_lang('password'),
                                         "autocomplete" => "off",
                                         "data-rule-minlength" => 6,
@@ -67,7 +67,7 @@
                                     echo form_password(array(
                                         "id" => "retype_password",
                                         "name" => "retype_password",
-                                        "class" => "form-control",
+                                        "class" => "form-control form-control-restructure",
                                         "placeholder" => app_lang('retype_password'),
                                         "autocomplete" => "off",
                                         "data-rule-equalTo" => "#password",
@@ -143,7 +143,7 @@
         </div>
         <?php if ($show_submit) { ?>
             <div class="card-footer rounded-0">
-                <button type="submit" class="btn btn-primary"><span data-feather="check-circle" class="icon-16"></span> <?php echo app_lang('save'); ?></button>
+                <button type="submit" class="btn btn-primary btn-sales-action float-end"><span data-feather="check-circle" class="icon-16"></span> <?php echo app_lang('save'); ?></button>
             </div>
         <?php } ?>
     </div>

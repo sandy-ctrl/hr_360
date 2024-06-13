@@ -62,7 +62,7 @@ if (isset($client_id)) {
         <div class="row card-body">
             <div class="col-md-3" >
                 <!-- mini calendor starts -->
-                <div class="calendar-container" id="mini-calendor">
+                <div class="calendar-container d-inline" id="mini-calendor">
                     <div class="calendar-body ">
                         <header class="calendar-header p10">
                             <span id="calendar-prev" class="material-symbols-rounded"><i
