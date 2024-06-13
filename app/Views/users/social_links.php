@@ -25,187 +25,165 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="facebook" class=" control-label">Facebook</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "facebook",
                                 "name" => "facebook",
                                 "value" => $model_info->facebook,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://www.facebook.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="twitter" class=" control-label">Twitter</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "twitter",
                                 "name" => "twitter",
                                 "value" => $model_info->twitter,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://twitter.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="linkedin" class=" control-label">Linkedin</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "linkedin",
                                 "name" => "linkedin",
                                 "value" => $model_info->linkedin,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://www.linkedin.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="whatsapp" class=" control-label">WhatsApp</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "whatsapp",
                                 "name" => "whatsapp",
                                 "value" => $model_info->whatsapp,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://wa.me/+001XXXXXXX"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="digg" class=" control-label">Digg</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "digg",
                                 "name" => "digg",
                                 "value" => $model_info->digg,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "http://digg.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="youtube" class=" control-label">Youtube</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "youtube",
                                 "name" => "youtube",
                                 "value" => $model_info->youtube,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://www.youtube.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="pinterest" class=" control-label">Pinterest</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "pinterest",
                                 "name" => "pinterest",
                                 "value" => $model_info->pinterest,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://www.pinterest.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="instagram" class=" control-label">Instagram</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "instagram",
                                 "name" => "instagram",
                                 "value" => $model_info->instagram,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://instagram.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="github" class=" control-label">Github</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "github",
                                 "name" => "github",
                                 "value" => $model_info->github,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://github.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="tumblr" class=" control-label">Tumblr</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "tumblr",
                                 "name" => "tumblr",
                                 "value" => $model_info->tumblr,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://www.tumblr.com/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label for="vine" class=" control-label">Vine</label>
-                        <div class=" col-md-112">
                             <?php
                             echo form_input(array(
                                 "id" => "vine",
                                 "name" => "vine",
                                 "value" => $model_info->vine,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => "https://vine.co/"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <?php if ($show_submit) { ?>
             <div class="card-footer rounded-0">
-                <button type="submit" class="btn btn-primary"><span data-feather="check-circle" class="icon-16"></span> <?php echo app_lang('save'); ?></button>
+                <button type="submit" class="btn btn-primary btn-sales-action float-end"><span data-feather="check-circle" class="icon-16"></span> <?php echo app_lang('save'); ?></button>
             </div>
         <?php } ?>
     </div>

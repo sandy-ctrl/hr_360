@@ -11,73 +11,65 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="job_title" class="control-label"><?php echo app_lang('job_title'); ?></label>
-                        <div class="col-md-12">
                             <?php
                             echo form_input(array(
                                 "id" => "job_title",
                                 "name" => "job_title",
                                 "value" => $job_info->job_title,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => app_lang('job_title')
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="salary" class="control-label"><?php echo app_lang('salary'); ?></label>
-                        <div class="col-md-12">
                             <?php
                             echo form_input(array(
                                 "id" => "salary",
                                 "name" => "salary",
                                 "value" => $job_info->salary ? to_decimal_format($job_info->salary) : "",
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => app_lang('salary')
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="salary_term" class="control-label"><?php echo app_lang('salary_term'); ?></label>
-                        <div class="col-md-12">
                             <?php
                             echo form_input(array(
                                 "id" => "salary_term",
                                 "name" => "salary_term",
                                 "value" => $job_info->salary_term,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => app_lang('salary_term')
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="date_of_hire" class="control-label"><?php echo app_lang('date_of_hire'); ?></label>
-                        <div class="col-md-12">
                             <?php
                             echo form_input(array(
                                 "id" => "date_of_hire",
                                 "name" => "date_of_hire",
                                 "value" => $job_info->date_of_hire,
-                                "class" => "form-control",
+                                "class" => "form-control form-control-restructure",
                                 "placeholder" => app_lang('date_of_hire'),
                                 "autocomplete" => "off"
                             ));
                             ?>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <?php if ($login_user->is_admin || $can_manage_team_members_job_information) { ?>
             <div class="card-footer rounded-0">
-                <button type="submit" class="btn btn-primary"><span data-feather="check-circle" class="icon-16"></span> <?php echo app_lang('save'); ?></button>
+                <button type="submit" class="btn btn-primary btn-sales-action float-end"><span data-feather="check-circle" class="icon-16"></span> <?php echo app_lang('save'); ?></button>
             </div>
         <?php } ?>
 
